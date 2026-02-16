@@ -66,3 +66,26 @@
     font-size: 28px;
   }
 }
+
+@media screen and (max-width: 757px) {
+  .teamCarousel {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .teamPortrait {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 1453px) {
+  .imageLeft {
+    width: 300px;
+    transform: translate(-45%, 60%);
+  }
+
+  .imageRight {
+    width: 200px;
+    transform: translate(45%, 60%);
+  }
+}

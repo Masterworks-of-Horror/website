@@ -20,3 +20,20 @@
   font-size: 25px;
   padding: 24px 96px;
 }
+
+@media screen and (max-width: 757px) {
+  .herosectionContainer {
+    padding: 90px 0px;
+    background-size: 200%;
+    background-position: center;
+    min-height: 10vh;
+    height: 100vh;
+  }
+  .floatingContainer {
+    color: rgb(255, 199, 154);
+    background-color: rgba(17, 18, 23, 0.8);
+    border-radius: 8px;
+    font-size: 30px;
+    padding: 16px;
+  }
+}
