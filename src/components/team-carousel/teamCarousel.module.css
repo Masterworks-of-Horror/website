@@ -1,0 +1,68 @@
+.parentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.heading {
+  font-family: "Girassol", sans-serif;
+  font-size: 50px;
+  margin: 0;
+  padding: 100px 0 0 0;
+}
+.teamCarousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  p {
+    margin: 0;
+  }
+}
+
+.imageLeft {
+  position: absolute;
+  left: 0;
+  width: 600px;
+  transform: translate(-40%, 40%);
+}
+
+.imageRight {
+  position: absolute;
+  right: 0;
+  width: 400px;
+  transform: translate(40%, 30%);
+}
+
+.teamPortrait {
+  padding: 32px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.07);
+  img {
+    width: 200px;
+    border-radius: 9999px;
+  }
+
+  .portraitName {
+    font-family: "Girassol", sans-serif;
+    font-size: 50px;
+  }
+  .portraitPosition {
+    font-family: "El Messiri", sans-serif;
+    font-size: 28px;
+    transform: translateY(-12px);
+  }
+  .portraitFlavor {
+    font-family: "Playfair Display";
+    font-style: italic;
+    font-size: 28px;
+  }
+}
