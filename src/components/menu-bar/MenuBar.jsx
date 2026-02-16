@@ -1,6 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./menuBar.module.css";
 export const MenuBar = () => {
+  var doc = document.documentElement;
+  const [scrollState, setScrollState] = useState(0);
+  document.addEventListener("scroll", () => {
+    setScrollState(
+      (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0),
+    );
+  });
+  console.log(document.body.scrollTop);
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
@@ -12,8 +20,12 @@ export const MenuBar = () => {
       });
     });
   });
+
+  console.log(scrollState);
   return (
-    <div className={styles.menuContainer}>
+    <div
+      className={`${styles.menuContainer} ${scrollState < 100 ? styles.clear : ""}`}
+    >
       <ul className={styles.menuBar}>
         <li>
           <a href="#home">Home</a>
