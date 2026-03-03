@@ -1,0 +1,40 @@
+.herosectionContainer {
+  padding: 6.5rem;
+  font-family: "El Messiri", serif;
+  padding: 200px 106px 96px 96px;
+  font-style: normal;
+  position: relative;
+  background-image: url("/assets/azathoth-hero.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 111%;
+  background-position-y: 60%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.floatingContainer {
+  color: rgb(255, 199, 154);
+  background-color: rgba(17, 18, 23, 0.8);
+  border-radius: 8px;
+  font-size: 25px;
+  padding: 24px 96px;
+}
+
+@media screen and (max-width: 757px) {
+  .herosectionContainer {
+    padding: 40px 0px;
+    background-size: 200%;
+    background-position: center;
+    min-height: 10vh;
+    height: 100vh;
+  }
+  .floatingContainer {
+    color: rgb(255, 199, 154);
+    background-color: rgba(17, 18, 23, 0.8);
+    border-radius: 0;
+
+    font-size: 12px;
+    padding: 16px;
+  }
+}

@@ -1,40 +1,63 @@
-.herosectionContainer {
-  padding: 6.5rem;
-  font-family: "El Messiri", serif;
-  padding: 200px 106px 96px 96px;
-  font-style: normal;
-  position: relative;
-  background-image: url("/assets/azathoth-hero.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 111%;
-  background-position-y: 60%;
-  min-height: 100vh;
-  width: 100%;
+.heroContainer {
+  margin-top: 90px;
+  display: grid;
+  max-width: 100vw;
+  grid-template-columns: repeat(3, 1fr);
+  img {
+    width: 100%;
+  }
+  .ctaLogo {
+    height: 40px;
+    width: unset;
+  }
 }
 
-.floatingContainer {
-  color: rgb(255, 199, 154);
-  background-color: rgba(17, 18, 23, 0.8);
+.imageContainer {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100vw;
+  img {
+    width: 100%;
+    height: 100%; /* Forces image to fill the cell height */
+    object-fit: cover; /* Crops the sides to maintain aspect ratio */
+    object-position: center;
+  }
+}
+
+.authorImageLeft {
+  /* transform: translateX(-20%); */
+}
+.authorImageRight {
+  transform: translateX(20%);
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.betaAccessBox {
+  font-family: "Asul";
+  color: black;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   border-radius: 8px;
-  font-size: 25px;
-  padding: 24px 96px;
+  padding: 4px;
+}
+
+.signUp {
+  font-family: "Asul";
+  font-size: 32px;
+  border-bottom: 1px solid white;
 }
 
 @media screen and (max-width: 757px) {
-  .herosectionContainer {
-    padding: 40px 0px;
-    background-size: 200%;
-    background-position: center;
-    min-height: 10vh;
-    height: 100vh;
-  }
-  .floatingContainer {
-    color: rgb(255, 199, 154);
-    background-color: rgba(17, 18, 23, 0.8);
-    border-radius: 0;
-
-    font-size: 12px;
-    padding: 16px;
+  .heroContainer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
   }
 }
