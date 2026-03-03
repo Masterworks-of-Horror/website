@@ -35,7 +35,7 @@ export const HeroSectionDesktop = () => {
 export const HeroSectionMobile = () => {
   return (
     <div className={styles.heroContainer}>
-      <img src="/new-assets/logo.png" />
+      <img src="/new-assets/logo.png" className={styles.heroLogo} />
       <div className={styles.imageContainer}>
         <img
           src="/new-assets/lovecraft.png"

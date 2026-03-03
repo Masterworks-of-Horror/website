@@ -15,6 +15,12 @@
   }
 }
 
+.menuLogo {
+  padding: 12px 8px;
+  height: 50px;
+  box-sizing: border-box;
+  object-fit: contain;
+}
 .clear {
   background-color: transparent;
 }
@@ -28,7 +34,7 @@
 
   a {
     color: white;
-    &:hover { 
+    &:hover {
       color: rgb(193, 197, 255);
     }
   }
@@ -37,14 +43,23 @@
 /* Mobile CSS */
 @media screen and (max-width: 757px) {
   .menuContainer {
-    justify-content: center;
+    flex-direction: column;
   }
   .menuBar {
     font-size: 10px;
   }
 
-  .menuBar > ul {
+  .menuBar {
     margin: 8px 16px;
+    flex-direction: column;
     padding-inline-start: 10px;
+    width: 100%;
+    background-color: black;
+  }
+
+  .mobileMenuUpper {
+    display: flex;
+    height: var(--menu-bar-height-mobile);
+    justify-content: space-between;
   }
 }

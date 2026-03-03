@@ -1,5 +1,5 @@
 import { HeroSection } from "../components/hero-section/HeroSection";
-import { MenuBar } from "../components/old/menu-bar/MenuBar";
+import { MenuBar } from "../components/menu-bar/MenuBar";
 export const HomePage = () => {
   return (
     <>

@@ -1,10 +1,10 @@
 .heroContainer {
-  margin-top: 90px;
   display: grid;
   max-width: 100vw;
   grid-template-columns: repeat(3, 1fr);
-  img {
-    width: 100%;
+  .heroLogo {
+    width: 70%;
+    margin: 8px 0px;
   }
   .ctaLogo {
     height: 40px;
@@ -17,19 +17,19 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100vw;
-  img {
-    width: 100%;
-    height: 100%; /* Forces image to fill the cell height */
-    object-fit: cover; /* Crops the sides to maintain aspect ratio */
-    object-position: center;
-  }
 }
 
 .authorImageLeft {
-  /* transform: translateX(-20%); */
+  width: 120%;
+  height: 120%; /* Forces image to fill the cell height */
+  object-fit: cover; /* Crops the sides to maintain aspect ratio */
+  object-position: center;
 }
 .authorImageRight {
-  transform: translateX(20%);
+  width: 120%;
+  height: 120%; /* Forces image to fill the cell height */
+  object-fit: cover; /* Crops the sides to maintain aspect ratio */
+  object-position: center;
 }
 
 .ctas {
@@ -58,6 +58,6 @@
 @media screen and (max-width: 757px) {
   .heroContainer {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 1fr 2fr 1fr;
+    place-items: center;
   }
 }
