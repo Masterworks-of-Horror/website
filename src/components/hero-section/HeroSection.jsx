@@ -3,22 +3,22 @@ import styles from "./hero-section.module.css";
 export const HeroSectionDesktop = () => {
   return (
     <div className={styles.heroContainer}>
-      <img src="/new-assets/lovecraft.png" />
+      <img src="/assets/lovecraft.png" />
       <div>
-        <img src="/new-assets/logo.png" />
+        <img src="/assets/logo.png" />
         <p className={styles.signUp}> Sign Up Now</p>
         <div className={styles.ctas}>
-          <img src="/new-assets/steam-cta.png" className={styles.ctaLogo} />
+          <img src="/assets/steam-cta.png" className={styles.ctaLogo} />
           <div className={styles.betaAccessBox}>
             <p>Beta Access</p>
             <div>
               <img
-                src="/new-assets/apple-logo.png"
+                src="/assets/apple-logo.png"
                 alt=""
                 className={styles.ctaLogo}
               />
               <img
-                src="/new-assets/google-play.png"
+                src="/assets/google-play.png"
                 alt=""
                 className={styles.ctaLogo}
                 style={{ padding: "0 12px 0 0" }}
@@ -27,7 +27,7 @@ export const HeroSectionDesktop = () => {
           </div>
         </div>
       </div>
-      <img src="/new-assets/poe.png" />
+      <img src="/assets/poe.png" />
     </div>
   );
 };
@@ -35,28 +35,25 @@ export const HeroSectionDesktop = () => {
 export const HeroSectionMobile = () => {
   return (
     <div className={styles.heroContainer}>
-      <img src="/new-assets/logo.png" className={styles.heroLogo} />
+      <img src="/assets/logo.png" className={styles.heroLogo} />
       <div className={styles.imageContainer}>
-        <img
-          src="/new-assets/lovecraft.png"
-          className={styles.authorImageLeft}
-        />
-        <img src="/new-assets/poe.png" className={styles.authorImageRight} />
+        <img src="/assets/lovecraft.png" className={styles.authorImageLeft} />
+        <img src="/assets/poe.png" className={styles.authorImageRight} />
       </div>
       <div>
         <p className={styles.signUp}> Sign Up Now</p>
         <div className={styles.ctas}>
-          <img src="/new-assets/steam-cta.png" className={styles.ctaLogo} />
+          <img src="/assets/steam-cta.png" className={styles.ctaLogo} />
           <div className={styles.betaAccessBox}>
             <p>Beta Access</p>
             <div>
               <img
-                src="/new-assets/apple-logo.png"
+                src="/assets/apple-logo.png"
                 alt=""
                 className={styles.ctaLogo}
               />
               <img
-                src="/new-assets/google-play.png"
+                src="/assets/google-play.png"
                 alt=""
                 className={styles.ctaLogo}
                 style={{ padding: "0 12px 0 0" }}

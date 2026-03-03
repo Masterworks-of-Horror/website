@@ -4,7 +4,7 @@ export const HeroSection = () => {
   return (
     <section className={styles.herosectionContainer} id="home">
       <div className={styles.floatingContainer}>
-        <img src="/assets/logo.png" />
+        <img src="/old-assets/logo.png" />
         <p>
           Bring your favorite stories to life using the works of legendary
           horror authors and become the genre’s greatest wordsmith in

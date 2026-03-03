@@ -83,7 +83,7 @@ export const MenuBarMobile = () => {
     <div className="outer">
       <div className={`${styles.menuContainer} `}>
         <div className={styles.mobileMenuUpper}>
-          <img src="/new-assets/logo.png" className={styles.menuLogo} />
+          <img src="/assets/logo.png" className={styles.menuLogo} />
           <Menu onClick={() => setExpanded((a) => !a)} />
         </div>
         <div>
