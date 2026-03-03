@@ -1,6 +1,6 @@
 .menuContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   transition: 0.7s ease-out;
   background-color: black;
   position: fixed;
@@ -28,7 +28,7 @@
 
   a {
     color: white;
-    &:hover {
+    &:hover { 
       color: rgb(193, 197, 255);
     }
   }
@@ -36,4 +36,15 @@
 
 /* Mobile CSS */
 @media screen and (max-width: 757px) {
+  .menuContainer {
+    justify-content: center;
+  }
+  .menuBar {
+    font-size: 10px;
+  }
+
+  .menuBar > ul {
+    margin: 8px 16px;
+    padding-inline-start: 10px;
+  }
 }
