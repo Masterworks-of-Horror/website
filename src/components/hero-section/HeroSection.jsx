@@ -3,7 +3,7 @@ import styles from "./hero-section.module.css";
 export const HeroSectionDesktop = () => {
   return (
     <div className={styles.heroContainer}>
-      <img src="/assets/lovecraft.png" />
+      <img src="/assets/lovecraft.png" className={styles.authorImage} />
       <div>
         <img src="/assets/logo.png" />
         <p className={styles.signUp}> Sign Up Now</p>
@@ -27,7 +27,7 @@ export const HeroSectionDesktop = () => {
           </div>
         </div>
       </div>
-      <img src="/assets/poe.png" />
+      <img src="/assets/poe.png" className={styles.authorImage} />
     </div>
   );
 };

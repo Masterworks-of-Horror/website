@@ -48,7 +48,7 @@ export const MenuBarDesktop = () => {
 
   return (
     <div className={`${styles.menuContainer}`}>
-      <p>logo</p>
+      <img src="/assets/logo.png" className={styles.menuLogo} />
       <ul className={styles.menuBar}>
         {menuItemList.map((item) => (
           <MenuItem {...item} />
