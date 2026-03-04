@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styles from "./signup.module.css";
 export const SignupSection = () => {
   return (
@@ -11,10 +12,12 @@ export const SignupSection = () => {
           </div>
         </div>
         <div>
-          <img src="/assets/necro.png" className={styles.ctaBanner} />
-          <div className={styles.ctaContainer}>
-            <p>Beta Mailing List</p>
-          </div>
+          <Link to="/contact">
+            <img src="/assets/necro.png" className={styles.ctaBanner} />
+            <div className={styles.ctaContainer}>
+              <p>Beta Mailing List</p>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
