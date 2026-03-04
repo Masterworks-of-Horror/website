@@ -76,8 +76,9 @@ export const ContactForm = () => {
       <ToastContainer />
       <h3>Contact Us</h3>
       <p>
-        If you are interested in playing Masterworks of Horror or to reach out
-        for a business opportunity, please fill out the form below.
+        If you are interested in playing the Masterworks of Horror mobile Beta
+        or to reach out for a business opportunity, please fill out the form
+        below.
       </p>
       <form className={styles.contactForm} onSubmit={handleSubmit}>
         <label htmlFor="name">Full Name</label>

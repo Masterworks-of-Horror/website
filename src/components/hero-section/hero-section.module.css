@@ -74,12 +74,16 @@
   .heroContainer {
     padding: var(--menu-bar-height-mobile) 0;
     margin-top: var(--menu-bar-height-mobile);
-    max-height: calc(100vh - var(--menu-bar-height-mobile));
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
   }
 
   .signUp {
     font-size: var(--heading-font-size-mobile);
+  }
+
+  .ctas {
+    flex-direction: column;
+    gap: 20px;
   }
 }

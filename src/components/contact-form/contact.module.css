@@ -3,6 +3,7 @@
   margin: auto;
   max-width: calc(757px * 0.7);
   padding: 20px;
+  font-size: var(--body-font);
   .contactForm {
     align-items: center;
     display: flex;
@@ -13,6 +14,10 @@
     textarea,
     select {
       width: 100%;
+    }
+
+    textarea {
+      height: 100px;
     }
 
     label {
