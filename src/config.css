@@ -1,4 +1,27 @@
 :root {
   --menu-bar-height-mobile: 50px;
   --menu-bar-height-desktop: 70px;
+  --heading-font-size-mobile: 36px;
+  --heading-font-size-desktop: 48px;
+  --body-font: 24px;
+  --heading-color: rgba(232, 143, 0, 1);
+}
+
+h3 {
+  color: var(--heading-color);
+  font-family: Asul;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: var(--heading-font-size-desktop);
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+@media screen and (max-width: 757px) {
+  h3 {
+    font-size: var(--heading-font-size-mobile);
+  }
+  :root {
+    --body-font: 15px;
+  }
 }

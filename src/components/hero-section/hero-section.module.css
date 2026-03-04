@@ -1,12 +1,15 @@
 .heroContainer {
+  padding: 100px 0px;
+  margin-top: var(--menu-bar-height-desktop);
   display: grid;
   max-width: 100vw;
   grid-template-columns: repeat(3, 1fr);
 
   .authorImage {
-    width: 100%;
+    width: 110%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
   }
   .heroLogo {
     width: 70%;
@@ -57,19 +60,20 @@
 
 .signUp {
   font-family: "Asul";
-  font-size: 32px;
+  font-size: var(--heading-font-size-desktop);
   border-bottom: 1px solid white;
 }
 
 @media screen and (max-width: 757px) {
   .heroContainer {
-    margin-top: 0;
+    padding: var(--menu-bar-height-mobile) 0;
+    margin-top: var(--menu-bar-height-mobile);
     max-height: calc(100vh - var(--menu-bar-height-mobile));
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
   }
 
   .signUp {
-    font-size: 22px;
+    font-size: var(--heading-font-size-mobile);
   }
 }
