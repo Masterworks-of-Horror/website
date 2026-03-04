@@ -15,7 +15,9 @@ export const BattleSection = () => {
       <div>
         <h3 className={styles.copyHeading}>Battle Your Foes</h3>
         <p className={styles.copyBody}>
-          {`Battle Your Foes Test your creations in literary battles. Will you defeat others or meet your demise?`}
+          {`Battle your foes and Test your creations in Literary Battles.`}
+          <br />
+          {`Will you defeat others or meet your demise?`}
         </p>
       </div>
     </div>

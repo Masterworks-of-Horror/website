@@ -15,8 +15,10 @@ export const CraftSection = () => {
       <div>
         <h3 className={styles.copyHeading}>Craft Your Own Story</h3>
         <p className={styles.copyBody}>
-          {`Build and customize your masterwork. Choose from some of history’s
-          most iconic characters, settings, and authors.`}
+          {`Build and customize your masterwork. `}
+          <br />
+          {`Choose from some of history’s most
+           iconic characters, settings, and authors.`}
         </p>
       </div>
     </div>

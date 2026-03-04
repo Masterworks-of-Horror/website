@@ -20,6 +20,7 @@
     font-family: "Girassol";
     font-size: var(--body-font);
     line-height: 100%;
+    direction: ltr;
   }
 }
 

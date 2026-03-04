@@ -7,7 +7,7 @@ export const TrailerSection = () => {
         <h3 className={styles.copyHeading}>What is Masterworks of Horror</h3>
         <p className={styles.copyBody}>
           Masterworks of Horror is a fast paced real time card game based off
-          the literary works of such famous authors as H.P. Lovecraft, Edgar
+          the literary works of famous authors such as H.P. Lovecraft, Edgar
           Allen Poe, and many more.
         </p>
       </div>
