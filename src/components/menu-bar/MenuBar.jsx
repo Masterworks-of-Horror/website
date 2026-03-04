@@ -2,18 +2,15 @@ import { useEffect, useState } from "react";
 import styles from "./menuBar.module.css";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Menu, SoapDispenserDroplet } from "lucide-react";
+import { Link } from "react-router";
 
 const menuItemList = [
   {
-    href: "#home",
-    text: "About",
+    href: "/",
+    text: "Home",
   },
   {
-    href: "#team",
-    text: "Meet the Authors",
-  },
-  {
-    href: "",
+    href: "/contact",
     text: "Contact Us",
   },
 ];
@@ -21,7 +18,7 @@ const menuItemList = [
 const MenuItem = ({ href, text }) => {
   return (
     <li>
-      <a href={href}>{text}</a>
+      <Link to={href}>{text}</Link>
     </li>
   );
 };
@@ -48,7 +45,9 @@ export const MenuBarDesktop = () => {
 
   return (
     <div className={`${styles.menuContainer}`}>
-      <img src="/assets/logo.png" className={styles.menuLogo} />
+      <Link to="/">
+        <img src="/assets/logo.png" className={styles.menuLogo} />
+      </Link>
       <ul className={styles.menuBar}>
         {menuItemList.map((item) => (
           <MenuItem {...item} />
