@@ -19,12 +19,23 @@
     font-family: "Asul";
     padding: 10px 16px;
     line-height: 100%;
-    font-size: 40px;
+    font-size: var(--body-font);
     background-color: black;
     /* height: 100%; */
     color: var(--heading-color);
     display: flex;
     flex-direction: column;
     gap: 32px;
+  }
+}
+
+@media screen and (max-width: 757px) {
+  .signupContainer {
+    padding: 30px;
+    gap: 20px;
+    .optionsSection {
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
   }
 }

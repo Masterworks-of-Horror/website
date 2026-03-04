@@ -2,7 +2,7 @@ import styles from "./signup.module.css";
 export const SignupSection = () => {
   return (
     <div className={styles.signupContainer}>
-      <h3>Sign up now!</h3>
+      <h3>Join the Battle</h3>
       <div className={styles.optionsSection}>
         <div>
           <img src="/assets/steam-banner.png" className={styles.ctaBanner} />
