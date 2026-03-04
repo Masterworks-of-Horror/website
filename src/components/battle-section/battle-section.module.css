@@ -1,0 +1,34 @@
+.sectionContainer {
+  background-color: #e2e2e2;
+  background-color: black;
+  display: grid;
+  gap: 105px;
+  align-items: center;
+  padding: 100px;
+  grid-template-columns: repeat(2, 1fr);
+
+  .trailerVideo {
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .copyHeading {
+    font-size: var(--heading-font-size-desktop);
+  }
+  .copyBody {
+    font-family: "Girassol";
+    font-size: var(--body-font);
+    line-height: 100%;
+  }
+}
+
+@media screen and (max-width: 757px) {
+  .sectionContainer {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 20px;
+    .copyHeading {
+      font-size: var(--heading-font-size-mobile);
+    }
+  }
+}

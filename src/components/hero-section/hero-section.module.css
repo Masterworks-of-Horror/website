@@ -1,22 +1,85 @@
-.herosectionContainer {
-  padding: 6.5rem;
-  font-family: "El Messiri", serif;
-  padding: 200px 106px 96px 96px;
-  font-style: normal;
-  position: relative;
-  background-image: url("/assets/azathoth-hero.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 111%;
-  background-position-y: 60%;
-  min-height: 100vh;
-  width: 100%;
+.heroContainer {
+  padding: 100px 0px;
+  margin-top: var(--menu-bar-height-desktop);
+  display: grid;
+  max-width: 100vw;
+  grid-template-columns: repeat(3, 1fr);
+
+  .midSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .authorImage {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .heroLogo {
+    width: 70%;
+    margin: 8px 0px;
+  }
+  .ctaLogo {
+    height: 40px;
+    width: unset;
+  }
 }
 
-.floatingContainer {
-  color: rgb(255, 199, 154);
-  background-color: rgba(17, 18, 23, 0.8);
+.imageContainer {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100vw;
+}
+
+.authorImageLeft {
+  width: 120%;
+  height: 120%; /* Forces image to fill the cell height */
+  object-fit: cover; /* Crops the sides to maintain aspect ratio */
+  object-position: center;
+}
+.authorImageRight {
+  width: 120%;
+  height: 120%; /* Forces image to fill the cell height */
+  object-fit: cover; /* Crops the sides to maintain aspect ratio */
+  object-position: center;
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.betaAccessBox {
+  font-family: "Asul";
+  color: black;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   border-radius: 8px;
-  font-size: 25px;
-  padding: 24px 96px;
+  padding: 4px;
+}
+
+.signUp {
+  font-family: "Asul";
+  font-size: var(--heading-font-size-desktop);
+  border-bottom: 1px solid white;
+}
+
+@media screen and (max-width: 757px) {
+  .heroContainer {
+    padding: var(--menu-bar-height-mobile) 0;
+    margin-top: var(--menu-bar-height-mobile);
+    max-height: calc(100vh - var(--menu-bar-height-mobile));
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
+
+  .signUp {
+    font-size: var(--heading-font-size-mobile);
+  }
 }

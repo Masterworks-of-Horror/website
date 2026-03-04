@@ -10,8 +10,8 @@ export const TeamCarousel = () => {
           {teamData.map((member) => TeamPortrait(member))}
         </div>
 
-        <img src="/assets/victor-left.png" className={styles.imageLeft} />
-        <img src="/assets/poe-right.png" className={styles.imageRight} />
+        <img src="/old-assets/victor-left.png" className={styles.imageLeft} />
+        <img src="/old-assets/poe-right.png" className={styles.imageRight} />
       </div>
     </section>
   );

@@ -1,23 +1,40 @@
+import { useWindowSize } from "../../hooks/useWindowSize";
 import styles from "./hero-section.module.css";
+export const HeroSectionDesktop = () => {
+  return (
+    <div className={styles.heroContainer}>
+      <img src="/assets/lovecraft.png" className={styles.authorImage} />
+      <div className={styles.midSection}>
+        <img src="/assets/logo.png" />
+        <p className={styles.signUp}> Wishlist Now</p>
+        <div className={styles.ctas}>
+          <img src="/assets/steam-cta.png" className={styles.ctaLogo} />
+        </div>
+      </div>
+      <img src="/assets/poe.png" className={styles.authorImage} />
+    </div>
+  );
+};
+
+export const HeroSectionMobile = () => {
+  return (
+    <div className={styles.heroContainer}>
+      <img src="/assets/logo.png" className={styles.heroLogo} />
+      <div className={styles.imageContainer}>
+        <img src="/assets/lovecraft.png" className={styles.authorImageLeft} />
+        <img src="/assets/poe.png" className={styles.authorImageRight} />
+      </div>
+      <div>
+        <p className={styles.signUp}> Sign Up Now</p>
+        <div className={styles.ctas}>
+          <img src="/assets/steam-cta.png" className={styles.ctaLogo} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const HeroSection = () => {
-  return (
-    <section className={styles.herosectionContainer} id="home">
-      <div className={styles.floatingContainer}>
-        <img src="/assets/logo.png" />
-        <p>
-          Bring your favorite stories to life using the works of legendary
-          horror authors and become the genre’s greatest wordsmith in
-          Masterworks of Horror: Lovecraft’s Gambit. Collect cards and build
-          fully customizable decks of literary mash-ups to best your opponent in
-          this real-time card game battler.
-        </p>
-        <p>
-          Do you have what it takes to embody horror’s most celebrated authors
-          and create your own Masterwork?
-        </p>
-        <img src="/assets/steam-cta.png" />
-      </div>
-    </section>
-  );
+  const isMobile = useWindowSize();
+  return <>{isMobile ? <HeroSectionMobile /> : <HeroSectionDesktop />}</>;
 };

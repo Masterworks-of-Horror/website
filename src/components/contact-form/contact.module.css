@@ -1,0 +1,23 @@
+.contactSection {
+  font-family: "Girassol";
+  margin: auto;
+  max-width: calc(757px * 0.7);
+  padding: 20px;
+  .contactForm {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+    }
+
+    label {
+      align-self: flex-start;
+      font-family: "Asul";
+    }
+  }
+}

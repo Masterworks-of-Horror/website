@@ -5,7 +5,7 @@ section {
   margin: 0 0 12px 0;
 }
 :root {
-  --test: #1c1c1c;
+  --test: #000;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
