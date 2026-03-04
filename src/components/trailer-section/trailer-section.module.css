@@ -1,6 +1,6 @@
 .sectionContainer {
-  color: black;
-  background-color: #e2e2e2;
+  color: #e2e2e2;
+  background-color: black;
   display: grid;
   gap: 105px;
   align-items: center;
