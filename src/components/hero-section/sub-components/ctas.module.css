@@ -1,6 +1,125 @@
-.container {
-  height: 40px;
-  width: 136px;
-  border-radius: 8px;
+.storeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 72px;
+}
+
+.steamLink {
+  margin-bottom: 56px;
+}
+
+.steamLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Asul";
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  padding: 14px 36px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: #1b2838;
+  position: relative;
   overflow: hidden;
+  transition: border-color 0.4s ease, transform 0.3s ease;
+  will-change: transform;
+}
+
+.steamLink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle 150px at var(--mx, -200px) var(--my, -200px),
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.steamLink:hover::before {
+  opacity: 1;
+}
+
+.speckleLayer {
+  position: absolute;
+  inset: 0;
+  filter: url(#speckle);
+  opacity: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  mask-image: radial-gradient(
+    circle 120px at var(--mx, -200px) var(--my, -200px),
+    black 0%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 120px at var(--mx, -200px) var(--my, -200px),
+    black 0%,
+    transparent 100%
+  );
+  transition: opacity 0.3s ease;
+}
+
+.steamLink:hover .speckleLayer {
+  opacity: 0.15;
+}
+
+.steamLink::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 5%;
+  right: 5%;
+  height: 14px;
+  background: rgba(102, 192, 244, 0.6);
+  filter: blur(16px);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.steamLink:hover {
+  color: white;
+  border-color: #66c0f4;
+}
+
+.steamLink:hover::after {
+  opacity: 1;
+}
+
+.comingSoon {
+  font-family: "Girassol";
+  font-size: 18px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.storeIcons {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+}
+
+.mailingListLink {
+  font-family: "Asul";
+  font-size: 18px;
+  color: var(--heading-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mailingListLink:hover {
+  color: var(--heading-color);
+  text-decoration: underline;
 }

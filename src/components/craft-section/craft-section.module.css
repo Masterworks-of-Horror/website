@@ -15,12 +15,40 @@
 
   .copyHeading {
     font-size: var(--heading-font-size-desktop);
+    background: linear-gradient(
+      90deg,
+      var(--heading-color) 0%,
+      var(--heading-color) 35%,
+      #fff 48%,
+      #fffbe6 50%,
+      #fff 52%,
+      var(--heading-color) 65%,
+      var(--heading-color) 100%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .copyHeading.sweep {
+    animation: bladeSweep 1.2s ease-in-out forwards;
   }
   .copyBody {
     font-family: "Girassol";
     font-size: var(--body-font);
-    line-height: 100%;
+    line-height: 150%;
     direction: ltr;
+  }
+}
+
+@keyframes bladeSweep {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
   }
 }
 

@@ -2,14 +2,14 @@
   display: flex;
   justify-content: left;
   transition: 0.7s ease-out;
-  background-color: black;
+  background: linear-gradient(to bottom, black 60%, transparent);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 2;
   height: fit-content;
-  padding: 2px;
+  padding: 2px 2px 20px 2px;
   ul {
     margin: 8px 16px;
   }
