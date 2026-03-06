@@ -1,67 +1,230 @@
-.heroContainer {
-  padding: 100px 0px;
-  margin-top: var(--menu-bar-height-desktop);
-  display: grid;
-  max-width: 100vw;
-  grid-template-columns: repeat(3, 1fr);
-
-  .midSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-  }
-  .authorImage {
-    width: 110%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .heroLogo {
-    width: 70%;
-    margin: 8px 0px;
-  }
-}
-
-.imageContainer {
+.hero {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100vw;
-}
-
-.authorImageLeft {
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
-  object-position: center;
-}
-.authorImageRight {
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.ctas {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 8px;
+  padding: 40px 0 24px;
 }
 
-@media screen and (max-width: 757px) {
-  .heroContainer {
-    padding: var(--menu-bar-height-mobile) 0;
-    margin-top: var(--menu-bar-height-mobile);
-    grid-template-columns: repeat(1, 1fr);
-    place-items: center;
+/* Sequential fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInOnly {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bannerLogo,
+.monster,
+.cards,
+.lhs,
+.rhs,
+.ctasSteam,
+.ctasMobile {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Delays — ultrawide (all 8 elements visible), constant 0.4s pace */
+.bg { animation-delay: 0s; }
+.bannerLogo { animation-delay: 0.4s; }
+.monster { animation-delay: 0.8s; }
+.cards { animation-delay: 1.2s; }
+.lhs { animation-delay: 1.6s; }
+.rhs { animation-delay: 2.0s; }
+.ctasSteam { animation-delay: 2.4s; }
+.ctasMobile { animation-delay: 2.8s; }
+
+/* Background layer — fills the entire hero */
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  opacity: 0;
+  animation: fadeInOnly 0.6s ease-out forwards;
+}
+
+/* Center column: logo + monster + cards stacked */
+.center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.bannerLogo {
+  width: 50vw;
+  height: auto;
+  position: relative;
+  z-index: 3;
+  margin-bottom: -12%;
+}
+
+.monster {
+  width: min(30vw, 440px);
+  height: auto;
+}
+
+.cards {
+  width: 30vw;
+  height: auto;
+  margin-top: -4%;
+}
+
+/* Side characters — absolutely positioned */
+.lhs,
+.rhs {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  height: 85%;
+  width: auto;
+  object-fit: contain;
+}
+
+.lhs {
+  left: 0;
+  object-position: left bottom;
+}
+
+.rhs {
+  right: 0;
+  object-position: right bottom;
+}
+
+/* CTAs float at the bottom center */
+.ctasSteam,
+.ctasMobile {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctasSteam {
+  margin-top: -1%;
+  padding-top: 72px;
+}
+
+.ctasMobile {
+  gap: 10px;
+  margin-top: 56px;
+  padding-bottom: 60px;
+}
+
+/* Ultrawide */
+@media screen and (min-width: 2001px) {
+  .hero {
+    height: calc(100vh - var(--menu-bar-height-desktop));
+    padding: 20px 0 16px;
   }
 
-  .ctas {
-    flex-direction: column;
-    gap: 12px;
+  .bannerLogo {
+    width: min(50vw, 700px);
   }
+
+  .monster {
+    width: min(25vw, 380px);
+  }
+
+  .cards {
+    width: min(28vw, 420px);
+    margin-top: -18%;
+  }
+
+  .lhs,
+  .rhs {
+    height: 75%;
+  }
+
+  .ctasSteam {
+    padding-top: 40px;
+  }
+
+  .ctasMobile {
+    margin-top: 32px;
+    padding-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .cards {
+    display: none;
+  }
+
+  /* Cards hidden — close the gap */
+  .lhs { animation-delay: 1.2s; }
+  .rhs { animation-delay: 1.6s; }
+  .ctasSteam { animation-delay: 2.0s; }
+  .ctasMobile { animation-delay: 2.4s; }
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .hero {
+    aspect-ratio: auto;
+    min-height: 50vh;
+  }
+
+  .bannerLogo {
+    width: 55vw;
+  }
+
+  .monster {
+    width: 40vw;
+  }
+
+  .lhs,
+  .rhs {
+    height: 70%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .hero {
+    aspect-ratio: auto;
+    min-height: 50vh;
+  }
+
+  .bannerLogo {
+    width: 75vw;
+  }
+
+  .monster {
+    width: 65vw;
+  }
+
+  .cards,
+  .lhs,
+  .rhs {
+    display: none;
+  }
+
+  /* Cards, lhs, rhs hidden — ctas follow monster */
+  .ctasSteam {
+    margin-top: 8px;
+    animation-delay: 1.2s;
+  }
+  .ctasMobile { animation-delay: 1.6s; }
 }

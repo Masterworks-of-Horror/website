@@ -5,6 +5,7 @@
   gap: 105px;
   align-items: center;
   padding: 100px;
+  min-height: 75vh;
   grid-template-columns: repeat(2, 1fr);
   direction: rtl;
 
@@ -57,6 +58,8 @@
     grid-template-columns: 1fr;
     padding: 30px;
     gap: 20px;
+    min-height: 75vh;
+    align-content: center;
     .copyHeading {
       font-size: var(--heading-font-size-mobile);
     }

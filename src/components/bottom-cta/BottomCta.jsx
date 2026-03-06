@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import { SiApple, SiGoogleplay, SiSteam } from "react-icons/si";
-import styles from "./ctas.module.css";
+import { SiSteam } from "react-icons/si";
+import styles from "./bottom-cta.module.css";
 
-export const StoreCtas = () => {
+export const BottomCta = () => {
   const linkRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -20,14 +20,14 @@ export const StoreCtas = () => {
   };
 
   const handleMouseLeave = () => {
-    linkRef.current.style.transform = "perspective(600px) scale(1) rotateX(0deg) rotateY(0deg)";
+    linkRef.current.style.transform =
+      "perspective(600px) scale(1) rotateX(0deg) rotateY(0deg)";
   };
 
   return (
-    <>
+    <section className={styles.section}>
       <svg width="0" height="0" style={{ position: "absolute" }}>
-        <filter id="speckle" colorInterpolationFilters="sRGB">
-          {/* Fine stars */}
+        <filter id="speckle-bottom" colorInterpolationFilters="sRGB">
           <feTurbulence
             type="fractalNoise"
             baseFrequency="1.2"
@@ -41,7 +41,6 @@ export const StoreCtas = () => {
             <feFuncB type="discrete" tableValues="0 0 0 0 0 0 0 0 1 1" />
             <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0.3 0.6" />
           </feComponentTransfer>
-          {/* Bright stars */}
           <feTurbulence
             type="fractalNoise"
             baseFrequency="0.9"
@@ -56,11 +55,18 @@ export const StoreCtas = () => {
             <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0.9" />
           </feComponentTransfer>
           <feGaussianBlur in="brightStars" stdDeviation="0.4" result="glowStars" />
-          {/* Combine layers */}
           <feComposite in="glowStars" in2="fineStars" operator="over" result="combined" />
           <feComposite in="fineStars" in2="combined" operator="over" />
         </filter>
       </svg>
+
+      <div className={styles.tagline}>
+        <h3 className={styles.heading}>Ready to Face the Horror?</h3>
+        <p className={styles.subheading}>
+          Wishlist now and be the first to play when it launches.
+        </p>
+      </div>
+
       <a
         ref={linkRef}
         href="https://store.steampowered.com/app/4436720/Masterworks_of_Horror_The_Prologue/"
@@ -74,23 +80,10 @@ export const StoreCtas = () => {
         <SiSteam size={28} />
         <span>Wishlist Now on Steam</span>
       </a>
-    </>
-  );
-};
 
-export const MobileCtas = () => {
-  return (
-    <>
-      <p className={styles.comingSoon}>
-        Coming soon to
-        <span className={styles.storeIcons}>
-          <SiApple size={20} />
-          <SiGoogleplay size={18} />
-        </span>
-      </p>
       <a href="/contact" className={styles.mailingListLink}>
         Join the Mobile Beta List &rsaquo;
       </a>
-    </>
+    </section>
   );
 };

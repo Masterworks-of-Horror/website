@@ -1,14 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./menuBar.module.css";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { Menu, SoapDispenserDroplet } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Link } from "react-router";
 
+const useElementVisible = (id) => {
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    const el = document.getElementById(id);
+    if (!el) {
+      setVisible(false);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [id]);
+  return visible;
+};
+
 const menuItemList = [
-  {
-    href: "/",
-    text: "Home",
-  },
   {
     href: "/contact",
     text: "Contact Us",
@@ -26,6 +40,8 @@ const MenuItem = ({ href, text }) => {
 export const MenuBarDesktop = () => {
   const doc = document.documentElement;
   const [scrollState, setScrollState] = useState(0);
+  const logoVisible = useElementVisible("banner-logo");
+  const heroVisible = useElementVisible("hero-section");
   document.addEventListener("scroll", () => {
     setScrollState(
       (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0),
@@ -44,9 +60,9 @@ export const MenuBarDesktop = () => {
   });
 
   return (
-    <div className={`${styles.menuContainer}`}>
+    <div className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}>
       <Link to="/">
-        <img src="/assets/logo.png" className={styles.menuLogo} />
+        <img src="/assets/logo.png" className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`} />
       </Link>
       <ul className={styles.menuBar}>
         {menuItemList.map((item) => (
@@ -60,6 +76,8 @@ export const MenuBarDesktop = () => {
 export const MenuBarMobile = () => {
   const doc = document.documentElement;
   const [scrollState, setScrollState] = useState(0);
+  const logoVisible = useElementVisible("banner-logo");
+  const heroVisible = useElementVisible("hero-section");
   document.addEventListener("scroll", () => {
     setScrollState(
       (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0),
@@ -80,10 +98,10 @@ export const MenuBarMobile = () => {
   const [isExpanded, setExpanded] = useState(false);
   return (
     <div className="outer">
-      <div className={`${styles.menuContainer} `}>
+      <div className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}>
         <div className={styles.mobileMenuUpper}>
           <Link to="/">
-            <img src="/assets/logo.png" className={styles.menuLogo} />
+            <img src="/assets/logo.png" className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`} />
           </Link>
           <Menu onClick={() => setExpanded((a) => !a)} />
         </div>

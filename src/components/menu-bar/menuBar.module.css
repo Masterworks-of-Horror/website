@@ -1,17 +1,17 @@
 .menuContainer {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   transition: 0.7s ease-out;
   background: linear-gradient(to bottom, black 60%, transparent);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 10;
   height: fit-content;
   padding: 2px 2px 20px 2px;
   ul {
-    margin: 8px 16px;
+    margin: 8px 24px 8px 16px;
   }
 }
 
@@ -20,6 +20,16 @@
   height: var(--menu-bar-height-desktop);
   box-sizing: border-box;
   object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.menuLogoHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menuTransparent {
+  background: transparent;
 }
 .clear {
   background-color: transparent;
@@ -46,24 +56,52 @@
 @media screen and (max-width: 757px) {
   .menuContainer {
     flex-direction: column;
-  }
-  .menuBar {
-    font-size: 20px;
+    padding-bottom: 20px;
+    background: linear-gradient(to bottom, black 60%, transparent);
   }
 
   .menuBar {
-    margin: 8px 16px;
+    font-size: 18px;
+    margin: 0;
+    padding: 8px 0 16px;
     flex-direction: column;
     padding-inline-start: 0;
-    background-color: black;
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    a {
+      display: block;
+      padding: 14px 24px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: background 0.2s;
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+    }
   }
 
   .mobileMenuUpper {
     display: flex;
     height: var(--menu-bar-height-mobile);
+    align-items: center;
     justify-content: space-between;
+    padding-right: 12px;
+
     .menuLogo {
       height: var(--menu-bar-height-mobile);
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
     }
   }
 }

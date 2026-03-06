@@ -1,34 +1,23 @@
-import { useWindowSize } from "../../hooks/useWindowSize";
 import styles from "./hero-section.module.css";
-import { StoreCtas } from "./sub-components/CTA";
-
-export const HeroSectionDesktop = () => {
-  return (
-    <div className={styles.heroContainer}>
-      <img src="/assets/lovecraft.png" className={styles.authorImage} />
-      <div className={styles.midSection}>
-        <img src="/assets/logo.png" />
-        <StoreCtas />
-      </div>
-      <img src="/assets/poe.png" className={styles.authorImage} />
-    </div>
-  );
-};
-
-export const HeroSectionMobile = () => {
-  return (
-    <div className={styles.heroContainer}>
-      <img src="/assets/logo.png" className={styles.heroLogo} />
-      <div className={styles.imageContainer}>
-        <img src="/assets/lovecraft.png" className={styles.authorImageLeft} />
-        <img src="/assets/poe.png" className={styles.authorImageRight} />
-      </div>
-      <StoreCtas />
-    </div>
-  );
-};
+import { StoreCtas, MobileCtas } from "./sub-components/CTA";
 
 export const HeroSection = () => {
-  const isMobile = useWindowSize();
-  return <>{isMobile ? <HeroSectionMobile /> : <HeroSectionDesktop />}</>;
+  return (
+    <div id="hero-section" className={styles.hero}>
+      <img src="/assets/bg.png" className={styles.bg} alt="" />
+      <img src="/assets/lhs.png" className={styles.lhs} alt="" />
+      <img src="/assets/rhs.png" className={styles.rhs} alt="" />
+      <div className={styles.center}>
+        <img id="banner-logo" src="/assets/banner-logo.png" className={styles.bannerLogo} alt="Masterworks of Horror" />
+        <img src="/assets/monster.png" className={styles.monster} alt="" />
+        <img src="/assets/cards.png" className={styles.cards} alt="" />
+      </div>
+      <div className={styles.ctasSteam}>
+        <StoreCtas />
+      </div>
+      <div className={styles.ctasMobile}>
+        <MobileCtas />
+      </div>
+    </div>
+  );
 };

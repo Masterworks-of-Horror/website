@@ -1,10 +1,28 @@
 .sectionContainer {
   color: #e2e2e2;
-  background-color: black;
+  background:
+    radial-gradient(1px 1px at 24px 63px, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 107px 28px, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1.2px 1.2px at 72px 140px, rgba(180, 200, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 160px 85px, rgba(255, 255, 255, 0.25), transparent),
+    radial-gradient(1.5px 1.5px at 35px 110px, rgba(180, 200, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 190px 45px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1.2px 1.2px at 85px 175px, rgba(180, 200, 255, 0.4), transparent),
+    linear-gradient(160deg, #060814 0%, #0a1028 50%, #060814 100%);
+  background-size:
+    197px 193px,
+    253px 241px,
+    179px 211px,
+    227px 197px,
+    293px 269px,
+    311px 283px,
+    337px 307px,
+    100% 100%;
   display: grid;
   gap: 105px;
   align-items: center;
   padding: 100px;
+  min-height: 75vh;
   grid-template-columns: repeat(2, 1fr);
 
   .trailerVideo {
@@ -55,6 +73,8 @@
     grid-template-columns: 1fr;
     padding: 30px;
     gap: 20px;
+    min-height: 75vh;
+    align-content: center;
     .copyHeading {
       font-size: var(--heading-font-size-mobile);
     }

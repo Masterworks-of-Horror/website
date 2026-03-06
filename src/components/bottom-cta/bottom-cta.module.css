@@ -1,3 +1,31 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  min-height: 50vh;
+  padding: 120px 24px;
+  background: #0b0f14;
+}
+
+.tagline {
+  text-align: center;
+}
+
+.heading {
+  font-family: "Girassol";
+  font-size: 42px;
+  color: white;
+  margin: 0 0 12px;
+}
+
+.subheading {
+  font-family: "Girassol";
+  font-size: 18px;
+  color: #aaa;
+  margin: 0;
+}
 
 .steamLink {
   display: inline-flex;
@@ -38,7 +66,7 @@
 .speckleLayer {
   position: absolute;
   inset: 0;
-  filter: url(#speckle);
+  filter: url(#speckle-bottom);
   opacity: 0;
   mix-blend-mode: screen;
   pointer-events: none;
@@ -81,23 +109,6 @@
 
 .steamLink:hover::after {
   opacity: 1;
-}
-
-.comingSoon {
-  font-family: "Girassol";
-  font-size: 18px;
-  color: #ddd;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-}
-
-.storeIcons {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #eee;
 }
 
 .mailingListLink {
