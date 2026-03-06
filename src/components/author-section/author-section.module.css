@@ -1,0 +1,101 @@
+.section {
+  padding: 160px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionInner {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Variant backgrounds */
+.blue {
+  background-color: white;
+  color: black;
+}
+
+.amber {
+  background-color: black;
+  color: white;
+}
+
+/* Author name heading */
+.authorName {
+  text-align: left;
+  font-size: var(--heading-font-size-desktop);
+  margin: 0 0 0.5em;
+}
+
+/* Bio grid: portrait + text */
+.bioGrid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.portraitWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  transform: scale(1.25) translateY(3%);
+}
+
+.bioText {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-family: "Girassol";
+  font-size: var(--body-font);
+  line-height: 150%;
+  text-align: left;
+}
+
+.bioText p {
+  margin: 0;
+}
+
+
+/* Mobile */
+@media screen and (max-width: 757px) {
+  .section {
+    padding: 40px 24px;
+    gap: 20px;
+  }
+
+  .authorName {
+    font-size: var(--heading-font-size-mobile);
+  }
+
+  .bioGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .portrait {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+}

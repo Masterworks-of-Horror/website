@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
 section {
   margin: 0 0 12px 0;
 }

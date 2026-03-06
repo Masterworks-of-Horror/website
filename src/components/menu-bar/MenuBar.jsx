@@ -24,6 +24,10 @@ const useElementVisible = (id) => {
 
 const menuItemList = [
   {
+    href: "/authors",
+    text: "Meet The Authors",
+  },
+  {
     href: "/contact",
     text: "Contact Us",
   },
@@ -61,7 +65,7 @@ export const MenuBarDesktop = () => {
 
   return (
     <div className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}>
-      <Link to="/">
+      <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         <img src="/assets/logo.png" className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`} />
       </Link>
       <ul className={styles.menuBar}>
