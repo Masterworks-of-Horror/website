@@ -24,7 +24,6 @@ export const CraftSection = () => {
         autoPlay
         loop
         playsInline
-        controls
         muted
         className={styles.trailerVideo}
       >

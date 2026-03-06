@@ -25,7 +25,6 @@ export const BattleSection = () => {
         loop
         playsInline
         muted
-        controls
         className={styles.trailerVideo}
       >
         <source src={"/videos/battle.mp4"} type="video/mp4" />
