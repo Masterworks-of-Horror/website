@@ -31,6 +31,7 @@
   }
 
   .copyHeading {
+    font-family: "Girassol";
     font-size: var(--heading-font-size-desktop);
     background: linear-gradient(
       90deg,
@@ -53,7 +54,7 @@
     animation: bladeSweep 1.2s ease-in-out forwards;
   }
   .copyBody {
-    font-family: "Girassol";
+    font-family: "Asul";
     font-size: var(--body-font);
     line-height: 150%;
   }

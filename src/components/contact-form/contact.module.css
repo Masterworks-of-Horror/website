@@ -1,5 +1,5 @@
 .contactSection {
-  font-family: "Girassol";
+  font-family: "Asul";
   margin: auto;
   max-width: 560px;
   padding: 80px 30px;
@@ -7,6 +7,7 @@
   text-align: center;
 
   h3 {
+    font-family: "Girassol";
     margin-bottom: 16px;
   }
 

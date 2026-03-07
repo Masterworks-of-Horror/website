@@ -33,6 +33,7 @@
 /* Author name heading */
 .authorName {
   text-align: left;
+  font-family: "Girassol";
   font-size: var(--heading-font-size-desktop);
   margin: 0 0 0.5em;
 }
@@ -66,7 +67,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  font-family: "Girassol";
+  font-family: "Asul";
   font-size: var(--body-font);
   line-height: 150%;
   text-align: left;
@@ -93,9 +94,17 @@
     gap: 20px;
   }
 
+  .portraitWrap {
+    position: static;
+  }
+
   .portrait {
+    position: static;
     width: 60%;
+    height: auto;
     margin: 0 auto;
+    display: block;
+    transform: none;
   }
 
 }

@@ -203,6 +203,7 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
   .hero {
+    margin-top: var(--menu-bar-height-mobile);
     aspect-ratio: auto;
     min-height: 50vh;
   }
