@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router";
 import { SiApple, SiGoogleplay, SiSteam } from "react-icons/si";
 import styles from "./ctas.module.css";
 
@@ -20,7 +21,8 @@ export const StoreCtas = () => {
   };
 
   const handleMouseLeave = () => {
-    linkRef.current.style.transform = "perspective(600px) scale(1) rotateX(0deg) rotateY(0deg)";
+    linkRef.current.style.transform =
+      "perspective(600px) scale(1) rotateX(0deg) rotateY(0deg)";
   };
 
   return (
@@ -55,9 +57,18 @@ export const StoreCtas = () => {
             <feFuncB type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0.7" />
             <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0.9" />
           </feComponentTransfer>
-          <feGaussianBlur in="brightStars" stdDeviation="0.4" result="glowStars" />
+          <feGaussianBlur
+            in="brightStars"
+            stdDeviation="0.4"
+            result="glowStars"
+          />
           {/* Combine layers */}
-          <feComposite in="glowStars" in2="fineStars" operator="over" result="combined" />
+          <feComposite
+            in="glowStars"
+            in2="fineStars"
+            operator="over"
+            result="combined"
+          />
           <feComposite in="fineStars" in2="combined" operator="over" />
         </filter>
       </svg>
@@ -88,9 +99,9 @@ export const MobileCtas = () => {
           <SiGoogleplay size={18} />
         </span>
       </p>
-      <a href="/contact" className={styles.mailingListLink}>
+      <Link to="/contact" className={styles.mailingListLink}>
         Join the Mobile Beta List &rsaquo;
-      </a>
+      </Link>
     </>
   );
 };

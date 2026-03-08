@@ -9,15 +9,21 @@ const authors = [
     portrait: "/assets/authors/edgarallenpoe.png",
     variant: "blue",
     bio: [
-      'Known as the "Master of the Macabre", Edgar Allen Poe is most famous for his short stories and poems such as "The Raven" and "The Fall of the House of Usher."',
+      'Known as the "Master of the Macabre", Edgar Allan Poe is most famous for his short stories and poems such as "The Raven" and "The Fall of the House of Usher."',
       "His themes of death and psychological struggle have been directly reflected in our approach to any card belonging to his stories.",
       "Poe's playstyle revolves around the death of your cards and the benefits your sacrifice brings. Kill your characters, resurrect them, and keep the literary battle going with this author.",
     ],
     cards: [
-      { src: "/assets/authors/fortunatofinalplea.png", alt: "Fortunato's Final Plea" },
+      {
+        src: "/assets/authors/fortunatofinalplea.png",
+        alt: "Fortunato's Final Plea",
+      },
       { src: "/assets/authors/theblackroom.png", alt: "The Black Room" },
       { src: "/assets/authors/nevermore.png", alt: "Nevermore" },
-      { src: "/assets/authors/caskofamontillado.png", alt: "Cask of Amontillado" },
+      {
+        src: "/assets/authors/caskofamontillado.png",
+        alt: "Cask of Amontillado",
+      },
     ],
   },
   {
@@ -56,8 +62,8 @@ export const MeetTheAuthorsPage = () => {
               and tales from the past.
             </p>
             <p>
-              These are the amazing authors and their works that bring our game to
-              life.
+              These are the amazing authors and their works that bring our game
+              to life.
             </p>
           </div>
         </div>
