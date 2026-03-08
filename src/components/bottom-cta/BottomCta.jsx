@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { SiSteam } from "react-icons/si";
+import { Link } from "react-router";
 import styles from "./bottom-cta.module.css";
 
 export const BottomCta = () => {
@@ -54,8 +55,17 @@ export const BottomCta = () => {
             <feFuncB type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0.7" />
             <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0.9" />
           </feComponentTransfer>
-          <feGaussianBlur in="brightStars" stdDeviation="0.4" result="glowStars" />
-          <feComposite in="glowStars" in2="fineStars" operator="over" result="combined" />
+          <feGaussianBlur
+            in="brightStars"
+            stdDeviation="0.4"
+            result="glowStars"
+          />
+          <feComposite
+            in="glowStars"
+            in2="fineStars"
+            operator="over"
+            result="combined"
+          />
           <feComposite in="fineStars" in2="combined" operator="over" />
         </filter>
       </svg>
@@ -81,9 +91,9 @@ export const BottomCta = () => {
         <span>Wishlist Now on Steam</span>
       </a>
 
-      <a href="/contact" className={styles.mailingListLink}>
+      <Link to="/contact" className={styles.mailingListLink}>
         Join the Mobile Beta List &rsaquo;
-      </a>
+      </Link>
     </section>
   );
 };
