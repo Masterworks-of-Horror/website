@@ -12,7 +12,7 @@ export const TrailerSection = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.5, rootMargin: "-20% 0px -20% 0px" }
+      { threshold: 0.5, rootMargin: "-20% 0px -20% 0px" },
     );
     if (headingRef.current) observer.observe(headingRef.current);
     return () => observer.disconnect();
@@ -25,11 +25,14 @@ export const TrailerSection = () => {
         <h3
           ref={headingRef}
           className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
-        >What is <br />Masterworks of Horror</h3>
+        >
+          What is <br />
+          Masterworks of Horror
+        </h3>
         <p className={styles.copyBody}>
           Masterworks of Horror is a fast paced real time card game based off
           the literary works of famous authors such as H.P. Lovecraft, Edgar
-          Allen Poe, and many more.
+          Allan Poe, and many more.
         </p>
       </div>
     </div>
