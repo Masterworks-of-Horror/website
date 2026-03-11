@@ -25,9 +25,73 @@
   min-height: 75vh;
   grid-template-columns: repeat(2, 1fr);
 
-  .trailerVideo {
-    object-fit: contain;
+  .trailerFrame {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(4, 8, 20, 0.9);
+    box-shadow:
+      0 28px 70px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  }
+
+  .posterButton {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .posterButton:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: -6px;
+  }
+
+  .posterImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: brightness(0.72);
+    transition:
+      transform 180ms ease,
+      filter 180ms ease;
+  }
+
+  .posterButton:hover .posterImage,
+  .posterButton:focus-visible .posterImage {
+    transform: scale(1.02);
+    filter: brightness(0.82);
+  }
+
+  .playBadge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 14px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(6, 8, 20, 0.78);
+    color: #fff;
+    font-family: "Asul";
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  .trailerVideo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
   }
 
   .copyHeading {
@@ -76,6 +140,11 @@
     gap: 20px;
     min-height: 75vh;
     align-content: center;
+
+    .trailerFrame {
+      border-radius: 14px;
+    }
+
     .copyHeading {
       font-size: var(--heading-font-size-mobile);
     }

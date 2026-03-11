@@ -1,17 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./menuBar.module.css";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Menu } from "lucide-react";
 import { Link } from "react-router";
 
+const getElementVisibility = (id) => {
+  const el = document.getElementById(id);
+  if (!el) return false;
+  const rect = el.getBoundingClientRect();
+  return rect.bottom > 0 && rect.top < window.innerHeight;
+};
+
 const useElementVisible = (id) => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(() => getElementVisibility(id));
+
   useEffect(() => {
     const el = document.getElementById(id);
-    if (!el) {
-      setVisible(false);
-      return;
-    }
+    if (!el) return undefined;
+
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
       { threshold: 0 },
@@ -42,35 +48,22 @@ const MenuItem = ({ href, text }) => {
 };
 
 export const MenuBarDesktop = () => {
-  const doc = document.documentElement;
-  const [scrollState, setScrollState] = useState(0);
   const logoVisible = useElementVisible("banner-logo");
   const heroVisible = useElementVisible("hero-section");
-  document.addEventListener("scroll", () => {
-    setScrollState(
-      (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0),
-    );
-  });
-  useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
-  });
 
   return (
-    <div className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}>
+    <div
+      className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}
+    >
       <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-        <img src="/assets/logo.png" className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`} />
+        <img
+          src="/assets/logo.png"
+          className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`}
+        />
       </Link>
       <ul className={styles.menuBar}>
         {menuItemList.map((item) => (
-          <MenuItem {...item} />
+          <MenuItem key={item.href} {...item} />
         ))}
       </ul>
     </div>
@@ -78,34 +71,21 @@ export const MenuBarDesktop = () => {
 };
 
 export const MenuBarMobile = () => {
-  const doc = document.documentElement;
-  const [scrollState, setScrollState] = useState(0);
   const logoVisible = useElementVisible("banner-logo");
   const heroVisible = useElementVisible("hero-section");
-  document.addEventListener("scroll", () => {
-    setScrollState(
-      (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0),
-    );
-  });
-  useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
-  });
-
   const [isExpanded, setExpanded] = useState(false);
+
   return (
     <div className="outer">
-      <div className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}>
+      <div
+        className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}
+      >
         <div className={styles.mobileMenuUpper}>
-          <Link to="/">
-            <img src="/assets/logo.png" className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`} />
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <img
+              src="/assets/logo.png"
+              className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`}
+            />
           </Link>
           <Menu onClick={() => setExpanded((a) => !a)} />
         </div>
@@ -113,7 +93,7 @@ export const MenuBarMobile = () => {
           {isExpanded && (
             <ul className={styles.menuBar}>
               {menuItemList.map((item) => (
-                <MenuItem {...item} />
+                <MenuItem key={item.href} {...item} />
               ))}
             </ul>
           )}

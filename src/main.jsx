@@ -1,20 +1,13 @@
-import { StrictMode, useEffect } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import "./config.css";
 import App from "./App.jsx";
 import { HomePage } from "./views/HomePage.jsx";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { ContactPage } from "./views/ContactPage.jsx";
 import { MeetTheAuthorsPage } from "./views/MeetTheAuthorsPage.jsx";
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
+import { ScrollToTop } from "./components/scroll-to-top/ScrollToTop.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
