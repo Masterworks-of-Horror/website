@@ -105,7 +105,7 @@ const SocialCtas = () => {
         <SiInstagram size={20} />
         Instagram &rsaquo;
       </a>
-      <a href="https://www.google.com" className={styles.mailingListLink}>
+      <a href="https://discord.gg/ED2mhhrm" className={styles.mailingListLink}>
         <SiDiscord size={20} />
         Discord &rsaquo;
       </a>
