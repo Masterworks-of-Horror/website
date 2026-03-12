@@ -1,4 +1,3 @@
-
 .steamLink {
   display: inline-flex;
   align-items: center;
@@ -13,7 +12,9 @@
   background: #1b2838;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.4s ease, transform 0.3s ease;
+  transition:
+    border-color 0.4s ease,
+    transform 0.3s ease;
   will-change: transform;
 }
 
@@ -101,6 +102,10 @@
 }
 
 .mailingListLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   font-family: "Asul";
   font-size: 18px;
   color: #ffd9a0;
@@ -109,8 +114,11 @@
   border: 1px solid rgba(232, 143, 0, 0.5);
   border-radius: 2px;
   background: rgba(232, 143, 0, 0.15);
+  width: 100%;
   backdrop-filter: blur(4px);
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .mailingListLink:hover {
@@ -118,4 +126,10 @@
   background: rgba(232, 143, 0, 0.3);
   border-color: rgba(232, 143, 0, 0.8);
   text-decoration: none;
+}
+
+.socialCtas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

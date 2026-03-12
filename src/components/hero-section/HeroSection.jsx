@@ -8,7 +8,12 @@ export const HeroSection = () => {
       <img src="/assets/lhs.png" className={styles.lhs} alt="" />
       <img src="/assets/rhs.png" className={styles.rhs} alt="" />
       <div className={styles.center}>
-        <img id="banner-logo" src="/assets/banner-logo.png" className={styles.bannerLogo} alt="Masterworks of Horror" />
+        <img
+          id="banner-logo"
+          src="/assets/banner-logo.png"
+          className={styles.bannerLogo}
+          alt="Masterworks of Horror"
+        />
         <img src="/assets/monster.png" className={styles.monster} alt="" />
         <img src="/assets/cards.png" className={styles.cards} alt="" />
       </div>

@@ -1,6 +1,12 @@
 import { useRef } from "react";
 import { Link } from "react-router";
-import { SiApple, SiGoogleplay, SiSteam } from "react-icons/si";
+import {
+  SiApple,
+  SiDiscord,
+  SiGoogleplay,
+  SiInstagram,
+  SiSteam,
+} from "react-icons/si";
 import styles from "./ctas.module.css";
 
 export const StoreCtas = () => {
@@ -89,6 +95,24 @@ export const StoreCtas = () => {
   );
 };
 
+const SocialCtas = () => {
+  return (
+    <>
+      <a
+        href="https://www.instagram.com/masterworksgame/"
+        className={styles.mailingListLink}
+      >
+        <SiInstagram size={20} />
+        Instagram &rsaquo;
+      </a>
+      <a href="https://www.google.com" className={styles.mailingListLink}>
+        <SiDiscord size={20} />
+        Discord &rsaquo;
+      </a>
+    </>
+  );
+};
+
 export const MobileCtas = () => {
   return (
     <>
@@ -102,6 +126,7 @@ export const MobileCtas = () => {
       <Link to="/contact" className={styles.mailingListLink}>
         Join the Mobile Beta List &rsaquo;
       </Link>
+      <SocialCtas />
     </>
   );
 };
