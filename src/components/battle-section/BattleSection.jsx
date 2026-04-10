@@ -20,15 +20,11 @@ export const BattleSection = () => {
 
   return (
     <div className={styles.sectionContainer}>
-      <video
-        autoPlay
-        loop
-        playsInline
-        muted
+      <img
+        src={"/assets/battle-your-foes.gif"}
+        alt="Battle Your Foes"
         className={styles.trailerVideo}
-      >
-        <source src={"/videos/battle.mp4"} type="video/mp4" />
-      </video>
+      />
       <div>
         <h3
           ref={headingRef}
