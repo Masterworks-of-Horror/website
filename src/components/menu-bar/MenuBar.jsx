@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./menuBar.module.css";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Menu } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const getElementVisibility = (id) => {
   const el = document.getElementById(id);
@@ -48,17 +48,19 @@ const MenuItem = ({ href, text }) => {
 };
 
 export const MenuBarDesktop = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const logoVisible = useElementVisible("banner-logo");
   const heroVisible = useElementVisible("hero-section");
 
   return (
     <div
-      className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}
+      className={`${styles.menuContainer} ${isHome && heroVisible ? styles.menuTransparent : ""}`}
     >
       <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         <img
           src="/assets/logo.png"
-          className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`}
+          className={`${styles.menuLogo} ${isHome && logoVisible ? styles.menuLogoHidden : ""}`}
         />
       </Link>
       <ul className={styles.menuBar}>
@@ -71,6 +73,8 @@ export const MenuBarDesktop = () => {
 };
 
 export const MenuBarMobile = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const logoVisible = useElementVisible("banner-logo");
   const heroVisible = useElementVisible("hero-section");
   const [isExpanded, setExpanded] = useState(false);
@@ -78,13 +82,13 @@ export const MenuBarMobile = () => {
   return (
     <div className="outer">
       <div
-        className={`${styles.menuContainer} ${heroVisible ? styles.menuTransparent : ""}`}
+        className={`${styles.menuContainer} ${isHome && heroVisible ? styles.menuTransparent : ""}`}
       >
         <div className={styles.mobileMenuUpper}>
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <img
               src="/assets/logo.png"
-              className={`${styles.menuLogo} ${logoVisible ? styles.menuLogoHidden : ""}`}
+              className={`${styles.menuLogo} ${isHome && logoVisible ? styles.menuLogoHidden : ""}`}
             />
           </Link>
           <Menu onClick={() => setExpanded((a) => !a)} />
