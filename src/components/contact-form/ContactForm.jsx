@@ -102,7 +102,6 @@ export const ContactForm = () => {
         <label htmlFor="platform">Platform</label>
         <select id="platform" value={formData.platform} onChange={handleChange}>
           <option value="ios">iOS</option>
-          <option value="android">Android</option>
           <option value="pc">PC</option>
           <option value="mac">Mac</option>
         </select>
