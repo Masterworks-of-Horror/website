@@ -6,9 +6,6 @@ img {
   -webkit-user-drag: none;
   user-select: none;
 }
-section {
-  margin: 0 0 12px 0;
-}
 :root {
   --test: #000;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

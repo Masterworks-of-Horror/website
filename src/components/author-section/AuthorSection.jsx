@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./author-section.module.css";
 
-export const AuthorSection = ({ name, bio, variant, images = [], side = "left" }) => {
+export const AuthorSection = ({
+  name,
+  bio,
+  variant,
+  images = [],
+  side = "left",
+}) => {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
 

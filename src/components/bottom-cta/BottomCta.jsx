@@ -71,7 +71,7 @@ export const BottomCta = () => {
       </svg>
 
       <div className={styles.tagline}>
-        <h3 className={styles.heading}>Ready to Face the Horror?</h3>
+        <h3 className={styles.heading}>Ready To Write<br />The Next Great Masterwork?</h3>
         <p className={styles.subheading}>
           Wishlist now and be the first to play when it launches.
         </p>

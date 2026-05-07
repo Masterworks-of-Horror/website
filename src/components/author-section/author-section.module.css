@@ -1,18 +1,19 @@
 .section {
+  position: relative;
   padding: 100px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
 }
 
-.visible {
-  opacity: 1;
-  transform: translateY(0);
+.section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  pointer-events: none;
 }
 
 .blue {
@@ -20,9 +21,17 @@
   color: black;
 }
 
+.blue::after {
+  background: linear-gradient(to bottom, transparent, black);
+}
+
 .amber {
   background-color: black;
   color: white;
+}
+
+.amber::after {
+  background: linear-gradient(to bottom, transparent, white);
 }
 
 .authorName {
@@ -33,12 +42,20 @@
 }
 
 .bioGrid {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 1fr 1fr;
   gap: 64px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.visible .bioGrid {
+  opacity: 1;
 }
 
 .imageStack {
@@ -76,8 +93,37 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px;
   object-fit: cover;
+  -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  mask-composite: intersect;
 }
 
 .bioText {
@@ -96,7 +142,11 @@
 
 @media screen and (max-width: 757px) {
   .section {
-    padding: 40px 24px;
+    padding: 60px 24px;
+  }
+
+  .section::after {
+    height: 24px;
   }
 
   .authorName {

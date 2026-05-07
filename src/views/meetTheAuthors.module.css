@@ -25,6 +25,17 @@
   pointer-events: none;
 }
 
+.banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  background: linear-gradient(to bottom, transparent, white);
+  pointer-events: none;
+}
+
 .bannerTitle {
   position: relative;
   margin: 0;

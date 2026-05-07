@@ -10,6 +10,18 @@
   padding: 40px 0 24px;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #060814);
+  z-index: 4;
+}
+
 /* Sequential fade-in */
 @keyframes fadeIn {
   from {
