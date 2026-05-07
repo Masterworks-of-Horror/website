@@ -1,11 +1,18 @@
 .sectionContainer {
   background-color: #e2e2e2;
   background-color: black;
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  min-height: 75vh;
+}
+
+.sectionInner {
   display: grid;
   gap: 105px;
   align-items: center;
-  padding: 100px;
-  min-height: 75vh;
+  width: 100%;
+  max-width: 1400px;
   grid-template-columns: repeat(2, 1fr);
   direction: rtl;
 
@@ -58,10 +65,13 @@
 
 @media screen and (max-width: 757px) {
   .sectionContainer {
-    grid-template-columns: 1fr;
     padding: 30px;
-    gap: 20px;
     min-height: 75vh;
+  }
+
+  .sectionInner {
+    grid-template-columns: 1fr;
+    gap: 20px;
     align-content: center;
     .copyHeading {
       font-size: var(--heading-font-size-mobile);

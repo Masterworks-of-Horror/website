@@ -20,20 +20,22 @@ export const BattleSection = () => {
 
   return (
     <div className={styles.sectionContainer}>
-      <img
-        src={"/assets/battle-your-foes.gif"}
-        alt="Battle Your Foes"
-        className={styles.trailerVideo}
-      />
-      <div>
-        <h3
-          ref={headingRef}
-          className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
-        >Battle Your Foes</h3>
-        <p className={styles.copyBody}>
-          Battle against other players in Literary Battles or tackle the
-          singleplayer Author Saga!
-        </p>
+      <div className={styles.sectionInner}>
+        <img
+          src={"/assets/battle-your-foes.gif"}
+          alt="Battle Your Foes"
+          className={styles.trailerVideo}
+        />
+        <div>
+          <h3
+            ref={headingRef}
+            className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
+          >Battle Your Foes</h3>
+          <p className={styles.copyBody}>
+            Battle against other players in Literary Battles or tackle the
+            singleplayer Author Saga!
+          </p>
+        </div>
       </div>
     </div>
   );

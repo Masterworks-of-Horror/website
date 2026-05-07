@@ -3,6 +3,7 @@ import styles from "./menuBar.module.css";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router";
+import { SiDiscord, SiInstagram } from "react-icons/si";
 
 const getElementVisibility = (id) => {
   const el = document.getElementById(id);
@@ -39,10 +40,38 @@ const menuItemList = [
   },
 ];
 
+const socialList = [
+  {
+    href: "https://discord.gg/xNx8DTGu36",
+    label: "Discord",
+    Icon: SiDiscord,
+  },
+  {
+    href: "https://www.instagram.com/masterworksgame/",
+    label: "Instagram",
+    Icon: SiInstagram,
+  },
+];
+
 const MenuItem = ({ href, text }) => {
   return (
     <li>
       <Link to={href}>{text}</Link>
+    </li>
+  );
+};
+
+const SocialItem = ({ href, label, Icon }) => {
+  return (
+    <li className={styles.socialItem}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={label}
+      >
+        <Icon size={22} />
+      </a>
     </li>
   );
 };
@@ -63,11 +92,18 @@ export const MenuBarDesktop = () => {
           className={`${styles.menuLogo} ${isHome && logoVisible ? styles.menuLogoHidden : ""}`}
         />
       </Link>
-      <ul className={styles.menuBar}>
-        {menuItemList.map((item) => (
-          <MenuItem key={item.href} {...item} />
-        ))}
-      </ul>
+      <div className={styles.menuRight}>
+        <ul className={styles.menuBar}>
+          {menuItemList.map((item) => (
+            <MenuItem key={item.href} {...item} />
+          ))}
+        </ul>
+        <ul className={styles.socialBar}>
+          {socialList.map((item) => (
+            <SocialItem key={item.href} {...item} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
@@ -82,7 +118,7 @@ export const MenuBarMobile = () => {
   return (
     <div className="outer">
       <div
-        className={`${styles.menuContainer} ${isHome && heroVisible ? styles.menuTransparent : ""}`}
+        className={`${styles.menuContainer} ${isHome && heroVisible ? styles.menuTransparent : ""} ${isExpanded ? styles.menuExpanded : ""}`}
       >
         <div className={styles.mobileMenuUpper}>
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
@@ -95,11 +131,18 @@ export const MenuBarMobile = () => {
         </div>
         <div>
           {isExpanded && (
-            <ul className={styles.menuBar}>
-              {menuItemList.map((item) => (
-                <MenuItem key={item.href} {...item} />
-              ))}
-            </ul>
+            <>
+              <ul className={styles.menuBar}>
+                {menuItemList.map((item) => (
+                  <MenuItem key={item.href} {...item} />
+                ))}
+              </ul>
+              <ul className={styles.socialBar}>
+                {socialList.map((item) => (
+                  <SocialItem key={item.href} {...item} />
+                ))}
+              </ul>
+            </>
           )}
         </div>
       </div>

@@ -20,25 +20,27 @@ export const CraftSection = () => {
 
   return (
     <div className={styles.sectionContainer}>
-      <video
-        autoPlay
-        loop
-        playsInline
-        muted
-        className={styles.trailerVideo}
-      >
-        <source src="/videos/card-viewer.mp4" type="video/mp4" />
-      </video>
-      <div>
-        <h3
-          ref={headingRef}
-          className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
-        >Craft Your Own Story</h3>
-        <p className={styles.copyBody}>
-          Build your Masterwork (deck), choosing from history’s most iconic
-          characters, settings, and authors. Blend the works of multiple authors
-          to craft creative combos!
-        </p>
+      <div className={styles.sectionInner}>
+        <video
+          autoPlay
+          loop
+          playsInline
+          muted
+          className={styles.trailerVideo}
+        >
+          <source src="/videos/card-viewer.mp4" type="video/mp4" />
+        </video>
+        <div>
+          <h3
+            ref={headingRef}
+            className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
+          >Craft Your Own Story</h3>
+          <p className={styles.copyBody}>
+            Build your Masterwork (deck), choosing from history’s most iconic
+            characters, settings, and authors. Blend the works of multiple
+            authors to craft creative combos!
+          </p>
+        </div>
       </div>
     </div>
   );

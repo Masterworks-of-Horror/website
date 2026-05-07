@@ -26,54 +26,56 @@ export const TrailerSection = () => {
 
   return (
     <div className={styles.sectionContainer}>
-      <div className={styles.trailerFrame}>
-        {isPlaying ? (
-          <iframe
-            className={styles.trailerVideo}
-            src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
-            title="Masterworks of Horror trailer"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        ) : (
-          <button
-            type="button"
-            className={styles.posterButton}
-            onClick={() => setIsPlaying(true)}
-            aria-label="Play Masterworks of Horror trailer"
-          >
-            <img
-              src={posterSrc}
-              alt="Masterworks of Horror trailer poster"
-              className={styles.posterImage}
-              onError={() => {
-                if (posterSrc !== fallbackPoster) setPosterSrc(fallbackPoster);
-              }}
+      <div className={styles.sectionInner}>
+        <div className={styles.trailerFrame}>
+          {isPlaying ? (
+            <iframe
+              className={styles.trailerVideo}
+              src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+              title="Masterworks of Horror trailer"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
-            <span className={styles.playBadge} aria-hidden="true">
-              Play Trailer
-            </span>
-          </button>
-        )}
-      </div>
-      <div>
-        <h3
-          ref={headingRef}
-          className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
-        >
-          What is <br />
-          Masterworks of Horror?
-        </h3>
-        <p className={styles.copyBody}>
-          Masterworks of Horror is a real-time PvP card battler featuring the
-          literary works of famous authors such as H.P. Lovecraft, Edgar Allan
-          Poe, and many more.
-        </p>
-        <Link to="/authors" className={styles.authorsLink}>
-          Meet the Authors &rsaquo;
-        </Link>
+          ) : (
+            <button
+              type="button"
+              className={styles.posterButton}
+              onClick={() => setIsPlaying(true)}
+              aria-label="Play Masterworks of Horror trailer"
+            >
+              <img
+                src={posterSrc}
+                alt="Masterworks of Horror trailer poster"
+                className={styles.posterImage}
+                onError={() => {
+                  if (posterSrc !== fallbackPoster) setPosterSrc(fallbackPoster);
+                }}
+              />
+              <span className={styles.playBadge} aria-hidden="true">
+                Play Trailer
+              </span>
+            </button>
+          )}
+        </div>
+        <div>
+          <h3
+            ref={headingRef}
+            className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
+          >
+            What is <br />
+            Masterworks of Horror?
+          </h3>
+          <p className={styles.copyBody}>
+            Masterworks of Horror is a real-time PvP card battler featuring the
+            literary works of famous authors such as H.P. Lovecraft, Edgar Allan
+            Poe, and many more.
+          </p>
+          <Link to="/authors" className={styles.authorsLink}>
+            Meet the Authors &rsaquo;
+          </Link>
+        </div>
       </div>
     </div>
   );
