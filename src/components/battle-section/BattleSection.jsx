@@ -31,9 +31,8 @@ export const BattleSection = () => {
           className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
         >Battle Your Foes</h3>
         <p className={styles.copyBody}>
-          {`Battle your foes and Test your creations in Literary Battles.`}
-          <br />
-          {`Will you defeat others or meet your demise?`}
+          Battle against other players in Literary Battles or tackle the
+          singleplayer Author Saga!
         </p>
       </div>
     </div>

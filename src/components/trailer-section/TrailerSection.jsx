@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router";
 import styles from "./trailer-section.module.css";
 export const TrailerSection = () => {
   const headingRef = useRef(null);
@@ -63,13 +64,16 @@ export const TrailerSection = () => {
           className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
         >
           What is <br />
-          Masterworks of Horror
+          Masterworks of Horror?
         </h3>
         <p className={styles.copyBody}>
-          Masterworks of Horror is a fast paced real time card game based off
-          the literary works of famous authors such as H.P. Lovecraft, Edgar
-          Allan Poe, and many more.
+          Masterworks of Horror is a real-time PvP card battler featuring the
+          literary works of famous authors such as H.P. Lovecraft, Edgar Allan
+          Poe, and many more.
         </p>
+        <Link to="/authors" className={styles.authorsLink}>
+          Meet the Authors &rsaquo;
+        </Link>
       </div>
     </div>
   );

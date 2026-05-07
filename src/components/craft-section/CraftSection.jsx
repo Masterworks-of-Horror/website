@@ -35,10 +35,9 @@ export const CraftSection = () => {
           className={`${styles.copyHeading} ${animate ? styles.sweep : ""}`}
         >Craft Your Own Story</h3>
         <p className={styles.copyBody}>
-          {`Build and customize your masterwork. `}
-          <br />
-          {`Choose from some of history’s most
-           iconic characters, settings, and authors.`}
+          Build your Masterwork (deck), choosing from history’s most iconic
+          characters, settings, and authors. Blend the works of multiple authors
+          to craft creative combos!
         </p>
       </div>
     </div>

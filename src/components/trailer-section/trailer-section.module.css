@@ -122,6 +122,30 @@
     font-size: var(--body-font);
     line-height: 150%;
   }
+
+  .authorsLink {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: "Asul";
+    font-size: 18px;
+    color: #ffd9a0;
+    text-decoration: none;
+    padding: 10px 28px;
+    border: 1px solid rgba(232, 143, 0, 0.5);
+    border-radius: 2px;
+    background: rgba(232, 143, 0, 0.15);
+    backdrop-filter: blur(4px);
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .authorsLink:hover {
+    color: white;
+    background: rgba(232, 143, 0, 0.3);
+    border-color: rgba(232, 143, 0, 0.8);
+  }
 }
 
 @keyframes bladeSweep {
