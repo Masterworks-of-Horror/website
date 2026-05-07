@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router";
-import { SiApple, SiGoogleplay, SiSteam } from "react-icons/si";
+import { SiApple, SiSteam } from "react-icons/si";
 import styles from "./ctas.module.css";
 
 export const StoreCtas = () => {
@@ -96,7 +96,6 @@ export const MobileCtas = () => {
         Coming soon to
         <span className={styles.storeIcons}>
           <SiApple size={20} />
-          <SiGoogleplay size={18} />
         </span>
       </p>
       <Link to="/contact" className={styles.mailingListLink}>
