@@ -1,12 +1,13 @@
 .section {
-  padding: 160px 80px;
+  padding: 100px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .visible {
@@ -14,12 +15,6 @@
   transform: translateY(0);
 }
 
-.sectionInner {
-  width: 100%;
-  max-width: 1200px;
-}
-
-/* Variant backgrounds */
 .blue {
   background-color: white;
   color: black;
@@ -30,7 +25,6 @@
   color: white;
 }
 
-/* Author name heading */
 .authorName {
   text-align: left;
   font-family: "Girassol";
@@ -38,29 +32,52 @@
   margin: 0 0 0.5em;
 }
 
-/* Bio grid: portrait + text */
 .bioGrid {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  gap: 48px;
+  gap: 64px;
   width: 100%;
   max-width: 1200px;
+  align-items: center;
 }
 
-.portraitWrap {
-  position: relative;
-  overflow: hidden;
-}
-
-.portrait {
-  position: absolute;
-  top: 0;
-  left: 0;
+.imageStack {
+  display: grid;
+  gap: 16px;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: top center;
-  transform: scale(1.25) translateY(3%);
+}
+
+.imageStack.count1 {
+  grid-template-columns: 1fr;
+}
+
+.imageStack.count2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.imageStack.count3 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "a a"
+    "b c";
+}
+
+.imageStack.count3 .image:nth-child(1) {
+  grid-area: a;
+}
+.imageStack.count3 .image:nth-child(2) {
+  grid-area: b;
+}
+.imageStack.count3 .image:nth-child(3) {
+  grid-area: c;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 .bioText {
@@ -77,12 +94,9 @@
   margin: 0;
 }
 
-
-/* Mobile */
 @media screen and (max-width: 757px) {
   .section {
     padding: 40px 24px;
-    gap: 20px;
   }
 
   .authorName {
@@ -91,20 +105,10 @@
 
   .bioGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
   }
 
-  .portraitWrap {
-    position: static;
+  .imageStack {
+    order: -1;
   }
-
-  .portrait {
-    position: static;
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    transform: none;
-  }
-
 }

@@ -38,15 +38,12 @@
   animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Delays — ultrawide (all 8 elements visible), constant 0.4s pace */
+/* Default (mid widths): banner + monster + ctas only */
 .bg { animation-delay: 0s; }
 .bannerLogo { animation-delay: 0.4s; }
 .monster { animation-delay: 0.8s; }
-.cards { animation-delay: 1.2s; }
-.lhs { animation-delay: 1.6s; }
-.rhs { animation-delay: 2.0s; }
-.ctasSteam { animation-delay: 2.4s; }
-.ctasMobile { animation-delay: 2.8s; }
+.ctasSteam { animation-delay: 1.2s; }
+.ctasMobile { animation-delay: 1.6s; }
 
 /* Background layer — fills the entire hero */
 .bg {
@@ -72,33 +69,36 @@
 }
 
 .bannerLogo {
-  width: 50vw;
+  width: min(50vw, 700px);
   height: auto;
   position: relative;
   z-index: 3;
-  margin-bottom: -12%;
+  margin-bottom: -8%;
 }
 
 .monster {
-  width: min(30vw, 440px);
+  width: min(28vw, 380px);
   height: auto;
 }
 
+/* Cards (extra central character) — only shown at very wide screens */
 .cards {
-  width: 30vw;
+  width: min(26vw, 400px);
   height: auto;
-  margin-top: -4%;
+  margin-top: -14%;
+  display: none;
 }
 
-/* Side characters — absolutely positioned */
+/* Side characters — absolutely positioned, only at wide screens */
 .lhs,
 .rhs {
   position: absolute;
   z-index: 1;
   bottom: 0;
-  height: 85%;
+  height: 75%;
   width: auto;
   object-fit: contain;
+  display: none;
 }
 
 .lhs {
@@ -111,7 +111,7 @@
   object-position: right bottom;
 }
 
-/* CTAs float at the bottom center */
+/* CTAs */
 .ctasSteam,
 .ctasMobile {
   position: relative;
@@ -122,82 +122,43 @@
 }
 
 .ctasSteam {
-  margin-top: -1%;
-  padding-top: 72px;
+  margin-top: 24px;
 }
 
 .ctasMobile {
   gap: 10px;
-  margin-top: 56px;
+  margin-top: 40px;
   padding-bottom: 60px;
 }
 
-/* Ultrawide */
-@media screen and (min-width: 2001px) {
-  .hero {
-    height: calc(100vh - var(--menu-bar-height-desktop));
-    padding: 20px 0 16px;
-  }
-
-  .bannerLogo {
-    width: min(50vw, 700px);
-  }
-
-  .monster {
-    width: min(25vw, 380px);
-  }
-
-  .cards {
-    width: min(28vw, 420px);
-    margin-top: -18%;
-  }
-
+/* Wide desktop: bring back the side characters */
+@media screen and (min-width: 1500px) {
   .lhs,
   .rhs {
-    height: 75%;
+    display: block;
   }
 
-  .ctasSteam {
-    padding-top: 40px;
-  }
-
-  .ctasMobile {
-    margin-top: 32px;
-    padding-bottom: 24px;
-  }
-}
-
-@media screen and (max-width: 2000px) {
-  .cards {
-    display: none;
-  }
-
-  /* Cards hidden — close the gap */
+  .bannerLogo { animation-delay: 0.4s; }
+  .monster { animation-delay: 0.8s; }
   .lhs { animation-delay: 1.2s; }
   .rhs { animation-delay: 1.6s; }
   .ctasSteam { animation-delay: 2.0s; }
   .ctasMobile { animation-delay: 2.4s; }
 }
 
-/* Tablet */
-@media screen and (max-width: 1024px) {
-  .hero {
-    aspect-ratio: auto;
-    min-height: 50vh;
+/* Ultrawide: bring back the cards image */
+@media screen and (min-width: 2200px) {
+  .cards {
+    display: block;
   }
 
-  .bannerLogo {
-    width: 55vw;
-  }
-
-  .monster {
-    width: 40vw;
-  }
-
-  .lhs,
-  .rhs {
-    height: 70%;
-  }
+  .bannerLogo { animation-delay: 0.4s; }
+  .monster { animation-delay: 0.8s; }
+  .cards { animation-delay: 1.2s; }
+  .lhs { animation-delay: 1.6s; }
+  .rhs { animation-delay: 2.0s; }
+  .ctasSteam { animation-delay: 2.4s; }
+  .ctasMobile { animation-delay: 2.8s; }
 }
 
 /* Mobile */
@@ -216,16 +177,7 @@
     width: 65vw;
   }
 
-  .cards,
-  .lhs,
-  .rhs {
-    display: none;
-  }
-
-  /* Cards, lhs, rhs hidden — ctas follow monster */
   .ctasSteam {
     margin-top: 8px;
-    animation-delay: 1.2s;
   }
-  .ctasMobile { animation-delay: 1.6s; }
 }

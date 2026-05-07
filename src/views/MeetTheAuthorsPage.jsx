@@ -6,40 +6,45 @@ import styles from "./meetTheAuthors.module.css";
 const authors = [
   {
     name: "Edgar Allan Poe",
-    portrait: "/assets/authors/edgarallenpoe.png",
+    side: "left",
     variant: "blue",
     bio: [
-      'Known as the "Master of the Macabre", Edgar Allan Poe is most famous for his short stories and poems such as "The Raven" and "The Fall of the House of Usher."',
-      "His themes of death and psychological struggle have been directly reflected in our approach to any card belonging to his stories.",
-      "Poe's playstyle revolves around the death of your cards and the benefits your sacrifice brings. Kill your characters, resurrect them, and keep the literary battle going with this author.",
+      'Known as the "Master of the Macabre," Edgar Allan Poe is most famous for his short stories and poems such as "The Raven" and "The Fall of the House of Usher." Death and psychological struggle are common themes in his work and his Masterworks.',
+      "Poe's playstyle is aggressive. Craft decks focused on cards that grow stronger the more they die. Or, focus on spawning Regret token cards that damage your opponents.",
+      "Overwhelm your opponents with your multitude of characters, with your Regrets, and conquer them forevermore!",
     ],
-    cards: [
-      {
-        src: "/assets/authors/fortunatofinalplea.png",
-        alt: "Fortunato's Final Plea",
-      },
-      { src: "/assets/authors/theblackroom.png", alt: "The Black Room" },
-      { src: "/assets/authors/nevermore.png", alt: "Nevermore" },
-      {
-        src: "/assets/authors/caskofamontillado.png",
-        alt: "Cask of Amontillado",
-      },
+    images: [
+      { src: "/assets/authors/poe-1.png", alt: "Edgar Allan Poe artwork" },
+      { src: "/assets/authors/poe-2.jpg", alt: "Edgar Allan Poe artwork" },
     ],
   },
   {
     name: "H.P. Lovecraft",
-    portrait: "/assets/authors/hplovecraft.png",
+    side: "right",
     variant: "amber",
     bio: [
-      'The Creator of "Cosmic Horror", H.P. Lovecraft is Synonymous with strange and bewildering beings from the far reaches of space. His most famous works include "The Call of Cthulhu", "At the Mountains of Madness", and "The Shadow over Innsmouth."',
-      "Lovecraft's themes of Ancient entities, rituals, and Hulking beasts are demonstrated in our game through the use of powerful characters and cards to boost their stats.",
-      "Lovecraft's playstyle revolves around controlling his opponents and summoning unstoppable monsters. Decide what cosmic horrors you will conjure to your aid.",
+      'The creator of "Eldritch Horror," H.P. Lovecraft’s most famous works include "The Call of Cthulhu," "At the Mountains of Madness," and "The Shadow over Innsmouth." His works reflect on forbidden knowledge, ancient entities, and the insignificance of humanity.',
+      "Lovecraft will play slow before overwhelming his opponent with the power of the Deep Ones, and the Outer Gods. Awaken the Outer Gods, patiently summoning giant characters. Or Tear those trapped in the ocean depths.",
+      "Ensure your opponents spiral into madness and have them despair at their insignificance in the face of your Great Ones!",
     ],
-    cards: [
-      { src: "/assets/authors/nercronomicon.png", alt: "Necronomicon" },
-      { src: "/assets/authors/cthlhu.png", alt: "Cthulhu" },
-      { src: "/assets/authors/azatboth.png", alt: "Azathoth" },
-      { src: "/assets/authors/cityofrlyeh.png", alt: "The City of R'lyeh" },
+    images: [
+      { src: "/assets/authors/lovecraft-1.png", alt: "H.P. Lovecraft artwork" },
+      { src: "/assets/authors/lovecraft-2.png", alt: "H.P. Lovecraft artwork" },
+    ],
+  },
+  {
+    name: "Trapped Authors",
+    side: "left",
+    variant: "blue",
+    bio: [
+      "Our legendary Trapped Authors are Mary Shelley, Pu Songling, Ueda Akinari, Nikolai Gogol, Horacio Quiroga, and Bram Stoker. While each are legendary horror authors in their own right, each has been defeated by H.P. Lovecraft in his dubious plan to erase their works from history.",
+      "But Lovecraft underestimated these literary masters. While succeeding to erase nearly all of their respective works, these authors and their most legendary creations refuse to be forgotten. They team up, forming the Erased archetype, centered around Erasing card effects and ensuring they are still in control of their narrative.",
+      "Perfect for Masterworks beginners, the Erased archetype emphasizes simplifying opponents’ cards to write your perfect Masterwork and give these legends the respect they deserve.",
+    ],
+    images: [
+      { src: "/assets/authors/trapped-1.jpg", alt: "Trapped Authors artwork" },
+      { src: "/assets/authors/trapped-2.jpg", alt: "Trapped Authors artwork" },
+      { src: "/assets/authors/trapped-3.jpg", alt: "Trapped Authors artwork" },
     ],
   },
 ];
@@ -48,25 +53,11 @@ export const MeetTheAuthorsPage = () => {
   return (
     <div>
       <MenuBar />
-      <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <img
-            src="/assets/authors/mta.png"
-            alt="Meet The Authors"
-            className={styles.heroPortrait}
-          />
-          <div className={styles.heroText}>
-            <h3>Meet The Authors</h3>
-            <p>
-              Masterworks of Horror would be nothing without the amazing stories
-              and tales from the past.
-            </p>
-            <p>
-              These are the amazing authors and their works that bring our game
-              to life.
-            </p>
-          </div>
-        </div>
+      <section
+        className={styles.banner}
+        style={{ backgroundImage: "url(/assets/authors/banner.jpg)" }}
+      >
+        <h1 className={styles.bannerTitle}>Meet the Authors</h1>
       </section>
       {authors.map((author) => (
         <AuthorSection key={author.name} {...author} />

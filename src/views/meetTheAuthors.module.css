@@ -1,73 +1,47 @@
-.hero {
+.banner {
   margin-top: var(--menu-bar-height-desktop);
-  background-color: black;
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  aspect-ratio: 5 / 1;
+  max-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
-  padding: 30px 80px;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.heroInner {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 24px;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  animation: fadeInUp 0.8s ease forwards;
+  justify-content: center;
 }
 
-.heroPortrait {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
 }
 
-.heroText {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  font-family: "Asul";
-  font-size: var(--body-font);
-  line-height: 150%;
-  text-align: left;
-}
-
-.heroText h3 {
-  margin: 0 0 0.5em;
-  font-family: "Girassol", serif;
-  font-size: 70px;
-  color: white;
-  -webkit-text-fill-color: white;
-}
-
-.heroText p {
+.bannerTitle {
+  position: relative;
   margin: 0;
+  font-family: "Girassol", serif;
+  font-size: clamp(48px, 7vw, 110px);
+  color: white;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.6),
+    0 0 32px rgba(0, 0, 0, 0.4);
 }
 
 @media screen and (max-width: 757px) {
-  .hero {
+  .banner {
     margin-top: var(--menu-bar-height-mobile);
-    padding: 40px 24px;
-  }
-
-  .heroInner {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .heroPortrait {
-    width: 60%;
-    margin: 0 auto;
+    aspect-ratio: 3 / 1;
+    min-height: 200px;
   }
 }

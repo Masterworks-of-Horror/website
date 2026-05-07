@@ -19,13 +19,13 @@
     100% 100%;
   display: flex;
   justify-content: center;
-  padding: 100px;
-  min-height: 75vh;
+  padding: 60px 80px;
+  min-height: 60vh;
 }
 
 .sectionInner {
   display: grid;
-  gap: 105px;
+  gap: 64px;
   align-items: center;
   width: 100%;
   max-width: 1400px;
