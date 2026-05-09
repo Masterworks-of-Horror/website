@@ -25,16 +25,24 @@ export const AuthorSection = ({
     return () => observer.disconnect();
   }, []);
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return undefined;
+    const id = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [images.length]);
+
   const imagesEl = (
-    <div
-      className={`${styles.imageStack} ${styles[`count${images.length}`] || ""}`}
-    >
-      {images.map((img) => (
+    <div className={styles.carousel}>
+      {images.map((img, i) => (
         <img
           key={img.src}
           src={img.src}
           alt={img.alt || name}
-          className={styles.image}
+          className={`${styles.image} ${i === activeIndex ? styles.imageActive : ""}`}
           loading="lazy"
         />
       ))}

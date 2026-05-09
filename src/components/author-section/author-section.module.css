@@ -58,42 +58,21 @@
   opacity: 1;
 }
 
-.imageStack {
-  display: grid;
-  gap: 16px;
+.carousel {
+  position: relative;
   width: 100%;
-}
-
-.imageStack.count1 {
-  grid-template-columns: 1fr;
-}
-
-.imageStack.count2 {
-  grid-template-columns: 1fr 1fr;
-}
-
-.imageStack.count3 {
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "a a"
-    "b c";
-}
-
-.imageStack.count3 .image:nth-child(1) {
-  grid-area: a;
-}
-.imageStack.count3 .image:nth-child(2) {
-  grid-area: b;
-}
-.imageStack.count3 .image:nth-child(3) {
-  grid-area: c;
+  aspect-ratio: 5 / 7;
 }
 
 .image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
   -webkit-mask-image: linear-gradient(
       to right,
       transparent 0%,
@@ -124,6 +103,10 @@
       transparent 100%
     );
   mask-composite: intersect;
+}
+
+.imageActive {
+  opacity: 1;
 }
 
 .bioText {
@@ -158,7 +141,9 @@
     gap: 24px;
   }
 
-  .imageStack {
+  .carousel {
     order: -1;
+    max-width: 360px;
+    margin: 0 auto;
   }
 }
