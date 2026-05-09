@@ -7,6 +7,7 @@ import { HomePage } from "./views/HomePage.jsx";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { ContactPage } from "./views/ContactPage.jsx";
 import { MeetTheAuthorsPage } from "./views/MeetTheAuthorsPage.jsx";
+import { PrivacyPage } from "./views/PrivacyPage.jsx";
 import { ScrollToTop } from "./components/scroll-to-top/ScrollToTop.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<HomePage />} />
         <Route path="/authors" element={<MeetTheAuthorsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
