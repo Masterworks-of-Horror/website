@@ -44,7 +44,7 @@
 .cards,
 .lhs,
 .rhs,
-.ctasSteam,
+.ctasStore,
 .ctasMobile {
   opacity: 0;
   animation: fadeIn 0.6s ease-out forwards;
@@ -54,7 +54,7 @@
 .bg { animation-delay: 0s; }
 .bannerLogo { animation-delay: 0.4s; }
 .monster { animation-delay: 0.8s; }
-.ctasSteam { animation-delay: 1.2s; }
+.ctasStore { animation-delay: 1.2s; }
 .ctasMobile { animation-delay: 1.6s; }
 
 /* Background layer — fills the entire hero */
@@ -124,7 +124,7 @@
 }
 
 /* CTAs */
-.ctasSteam,
+.ctasStore,
 .ctasMobile {
   position: relative;
   z-index: 3;
@@ -133,7 +133,7 @@
   align-items: center;
 }
 
-.ctasSteam {
+.ctasStore {
   margin-top: 24px;
 }
 
@@ -154,7 +154,7 @@
   .monster { animation-delay: 0.8s; }
   .lhs { animation-delay: 1.2s; }
   .rhs { animation-delay: 1.6s; }
-  .ctasSteam { animation-delay: 2.0s; }
+  .ctasStore { animation-delay: 2.0s; }
   .ctasMobile { animation-delay: 2.4s; }
 }
 
@@ -169,7 +169,7 @@
   .cards { animation-delay: 1.2s; }
   .lhs { animation-delay: 1.6s; }
   .rhs { animation-delay: 2.0s; }
-  .ctasSteam { animation-delay: 2.4s; }
+  .ctasStore { animation-delay: 2.4s; }
   .ctasMobile { animation-delay: 2.8s; }
 }
 
@@ -189,7 +189,7 @@
     width: 65vw;
   }
 
-  .ctasSteam {
+  .ctasStore {
     margin-top: 8px;
   }
 }

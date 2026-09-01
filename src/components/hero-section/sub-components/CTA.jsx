@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router";
-import { SiApple, SiSteam } from "react-icons/si";
+import { SiApple, SiItchdotio } from "react-icons/si";
 import styles from "./ctas.module.css";
 
 export const StoreCtas = () => {
@@ -74,16 +74,16 @@ export const StoreCtas = () => {
       </svg>
       <a
         ref={linkRef}
-        href="https://store.steampowered.com/app/4436720/Masterworks_of_Horror_The_Prologue/"
+        href="https://masterworks-of-horror.itch.io/masterworks-of-horror-the-prologue"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.steamLink}
+        className={styles.itchLink}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
         <span className={styles.speckleLayer} />
-        <SiSteam size={28} />
-        <span>Wishlist Now on Steam</span>
+        <SiItchdotio size={28} />
+        <span>Play the Demo on itch.io</span>
       </a>
     </>
   );

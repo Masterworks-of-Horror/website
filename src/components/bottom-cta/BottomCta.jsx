@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { SiSteam } from "react-icons/si";
+import { SiItchdotio } from "react-icons/si";
 import { Link } from "react-router";
 import styles from "./bottom-cta.module.css";
 
@@ -73,22 +73,22 @@ export const BottomCta = () => {
       <div className={styles.tagline}>
         <h3 className={styles.heading}>Ready To Write<br />The Next Great Masterwork?</h3>
         <p className={styles.subheading}>
-          Wishlist now and be the first to play when it launches.
+          Play the free prologue demo now on itch.io.
         </p>
       </div>
 
       <a
         ref={linkRef}
-        href="https://store.steampowered.com/app/4436720/Masterworks_of_Horror_The_Prologue/"
+        href="https://masterworks-of-horror.itch.io/masterworks-of-horror-the-prologue"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.steamLink}
+        className={styles.itchLink}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
         <span className={styles.speckleLayer} />
-        <SiSteam size={28} />
-        <span>Wishlist Now on Steam</span>
+        <SiItchdotio size={28} />
+        <span>Play the Demo on itch.io</span>
       </a>
 
       <Link to="/contact" className={styles.mailingListLink}>

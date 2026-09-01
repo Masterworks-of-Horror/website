@@ -17,7 +17,7 @@ export const HeroSection = () => {
         <img src="/assets/monster.png" className={styles.monster} alt="" />
         <img src="/assets/cards.png" className={styles.cards} alt="" />
       </div>
-      <div className={styles.ctasSteam}>
+      <div className={styles.ctasStore}>
         <StoreCtas />
       </div>
       <div className={styles.ctasMobile}>

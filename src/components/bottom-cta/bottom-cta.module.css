@@ -28,7 +28,7 @@
   margin: 0;
 }
 
-.steamLink {
+.itchLink {
   display: inline-flex;
   align-items: center;
   gap: 16px;
@@ -39,14 +39,14 @@
   padding: 14px 36px;
   border: 1px solid transparent;
   border-radius: 2px;
-  background: #1b2838;
+  background: #241417;
   position: relative;
   overflow: hidden;
   transition: border-color 0.4s ease, transform 0.3s ease;
   will-change: transform;
 }
 
-.steamLink::before {
+.itchLink::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -60,7 +60,7 @@
   transition: opacity 0.3s ease;
 }
 
-.steamLink:hover::before {
+.itchLink:hover::before {
   opacity: 1;
 }
 
@@ -84,18 +84,18 @@
   transition: opacity 0.3s ease;
 }
 
-.steamLink:hover .speckleLayer {
+.itchLink:hover .speckleLayer {
   opacity: 0.15;
 }
 
-.steamLink::after {
+.itchLink::after {
   content: "";
   position: absolute;
   bottom: -16px;
   left: 5%;
   right: 5%;
   height: 14px;
-  background: rgba(102, 192, 244, 0.6);
+  background: rgba(250, 92, 92, 0.6);
   filter: blur(16px);
   border-radius: 50%;
   pointer-events: none;
@@ -103,12 +103,12 @@
   transition: opacity 0.4s ease;
 }
 
-.steamLink:hover {
+.itchLink:hover {
   color: white;
-  border-color: #66c0f4;
+  border-color: #fa5c5c;
 }
 
-.steamLink:hover::after {
+.itchLink:hover::after {
   opacity: 1;
 }
 
