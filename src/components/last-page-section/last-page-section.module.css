@@ -1,0 +1,138 @@
+.sectionContainer {
+  background:
+    radial-gradient(ellipse at 50% 40%, #2a1a10 0%, #16120d 55%, #0b0f14 100%);
+  display: flex;
+  justify-content: center;
+  padding: 60px 80px;
+  min-height: 60vh;
+  position: relative;
+}
+
+.sectionContainer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #0b0f14);
+}
+
+.sectionInner {
+  display: grid;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: left;
+}
+
+.coverLink {
+  justify-self: center;
+  display: block;
+  width: min(100%, 360px);
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+
+.kicker {
+  font-family: "Asul";
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e0c77e;
+  margin: 0 0 8px;
+}
+
+.copyHeading {
+  font-family: "Girassol";
+  font-size: var(--heading-font-size-desktop);
+  margin-top: 0;
+  background: linear-gradient(
+    90deg,
+    var(--heading-color) 0%,
+    var(--heading-color) 35%,
+    #fff 48%,
+    #fffbe6 50%,
+    #fff 52%,
+    var(--heading-color) 65%,
+    var(--heading-color) 100%
+  );
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.copyHeading.sweep {
+  animation: bladeSweep 1.2s ease-in-out forwards;
+}
+
+.copyBody {
+  font-family: "Asul";
+  font-size: var(--body-font);
+  line-height: 150%;
+}
+
+.siteLink {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: "Asul";
+  font-size: 18px;
+  color: #ffd9a0;
+  text-decoration: none;
+  padding: 10px 28px;
+  border: 1px solid rgba(232, 143, 0, 0.5);
+  border-radius: 2px;
+  background: rgba(232, 143, 0, 0.15);
+  backdrop-filter: blur(4px);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.siteLink:hover {
+  color: white;
+  background: rgba(232, 143, 0, 0.3);
+  border-color: rgba(232, 143, 0, 0.8);
+}
+
+@keyframes bladeSweep {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+@media screen and (max-width: 757px) {
+  .sectionContainer {
+    padding: 30px;
+    min-height: 75vh;
+  }
+
+  .sectionInner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-content: center;
+    text-align: center;
+  }
+
+  .coverLink {
+    width: min(70vw, 300px);
+  }
+
+  .copyHeading {
+    font-size: var(--heading-font-size-mobile);
+  }
+}

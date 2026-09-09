@@ -4,6 +4,7 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router";
 import { SiDiscord, SiInstagram } from "react-icons/si";
+import { LAST_PAGE_URL } from "../../siteLinks";
 
 const getElementVisibility = (id) => {
   const el = document.getElementById(id);
@@ -31,6 +32,11 @@ const useElementVisible = (id) => {
 
 const menuItemList = [
   {
+    href: LAST_PAGE_URL,
+    text: "The Last Page",
+    external: true,
+  },
+  {
     href: "/authors",
     text: "Meet The Authors",
   },
@@ -53,10 +59,16 @@ const socialList = [
   },
 ];
 
-const MenuItem = ({ href, text }) => {
+const MenuItem = ({ href, text, external }) => {
   return (
     <li>
-      <Link to={href}>{text}</Link>
+      {external ? (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {text}
+        </a>
+      ) : (
+        <Link to={href}>{text}</Link>
+      )}
     </li>
   );
 };
